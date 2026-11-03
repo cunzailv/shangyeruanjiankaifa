@@ -39,6 +39,11 @@
 
 ## 🚀 如何在 Trae 中使用
 
-1. 将本仓库克隆或下载到本地。
-2. 将其中的文件放置于你的工作区目录 `.trae/skills/project-development-planner/` 文件夹下。
-3. 在 Trae 的对话框中输入 `/project-development-planner 我想做一个XXX` 即可唤醒大管家！
+1. 在你的项目工作区根目录下，确保存在 `.trae/skills/` 文件夹。
+2. 将本仓库直接克隆到该目录，并命名为 `project-development-planner`：
+   ```bash
+   mkdir -p .trae/skills
+   cd .trae/skills
+   git clone https://github.com/cunzailv/shangyeruanjiankaifa.git project-development-planner
+   ```
+3. 重启或刷新 Trae，在对话框中输入 `/project-development-planner 我想做一个XXX` 即可唤醒大管家！
