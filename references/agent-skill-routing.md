@@ -4,16 +4,26 @@
 
 在规划推进到特定阶段时，大管家必须参考本路由表，**主动建议**用户去安装或调用 GitHub/社区上更专业的细分 Skill，以实现多智能体协同 (Multi-Agent Collaboration)。
 
-## 1. 各阶段专业 Skill 推荐映射表
+## 1. 各阶段专业 Skill 推荐映射表 (双轮驱动：产研技术 + 商运增长)
+
+### 🛠️ 产研交付军团 (Engineering Pod)
 
 | 规划阶段 | 需要深度的专业领域 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
 | :--- | :--- | :--- | :--- |
 | **阶段 2 (PRD与原型)** | 需求梳理、交互逻辑、低保真原型图绘制 | `product-manager-pro` / `wireframe-designer` | “商业模式已定。为了产出更严谨的原型图和需求文档，我建议您现在挂载 `product-manager-pro` Skill，让它帮您把功能点细化为可视化的页面流转图。” |
-| **阶段 3 (架构选型)** | 系统设计、微服务拆解、数据库选型 | `architecture-designer` | “关于具体的系统架构设计，我建议您现在调用 `architecture-designer` Skill，让它为您绘制详细的系统拓扑和 ADR (架构决策记录)。” |
-| **阶段 3 (契约与设计)** | UI/UX 设计、组件规范、Tailwind 落地 | `ui-ux-pro-max` / `frontend-design` | “我已经帮您确定了产品功能。接下来，建议您使用 `ui-ux-pro-max` Skill，让这位设计专家来帮您输出具体的 Tailwind 组件规范和交互流程。” |
-| **阶段 3 (安全合规)** | 安全审计、防注入、权限漏洞扫描 | `security-auditor` / `clawdefender` | “在确定了数据模型后，为了防止未来的 AI 越权或 Prompt 注入，建议您通过 `security-auditor` 进行一次前置安全审查。” |
-| **阶段 5 (落地拆解)** | 极简代码生成、避免过度设计 | `ponytail` (Lazy/Minimalist Coder) | “规划已完成。在正式编码时，如果您希望代码极其精简、不造轮子，强烈建议您在开发全程开启 `ponytail` Skill。” |
-| **阶段 5 (代码审查)** | Code Review, 质量保证 | `TRAE-code-review` / `ponytail-review` | “在拆解的工单开发完成后，请务必让 `TRAE-code-review` 介入进行合并前的质量把控。” |
+| **阶段 3 (架构选型)** | 系统设计、微服务拆解、数据库选型、算力成本核算 | `architecture-designer` / `tech-stack-decision-matrix` | “关于具体的系统架构设计与成本防破产防线，建议您调用 `architecture-designer` 或 `tech-stack-decision-matrix`，绘制详细的系统拓扑和 ADR 架构决策。” |
+| **阶段 4 (契约与设计)** | UI/UX 设计、组件规范、Tailwind 落地 | `ui-ux-pro-max` / `frontend-design` | “我已经帮您确定了产品功能。接下来，建议您使用 `ui-ux-pro-max` Skill，让这位设计专家来帮您输出具体的 Tailwind 组件规范和交互流程。” |
+| **阶段 4 (安全合规)** | 安全审计、防注入、权限漏洞扫描、GDPR | `security-auditor` / `clawdefender` | “在确定了数据模型后，为了防止未来的 AI 越权或 Prompt 注入，建议您通过 `security-auditor` 进行一次前置安全审查。” |
+| **阶段 6 (极简编码)** | 极简代码生成、避免过度设计 | `ponytail` (Lazy/Minimalist Coder) | “规划已完成。在正式编码时，如果您希望代码极其精简、不造轮子，强烈建议您在开发全程开启 `ponytail` Skill。” |
+| **阶段 6 (代码审查)** | Code Review, 对抗性测试质量保证 | `TRAE-code-review` / `ponytail-review` | “在拆解的工单开发完成后，请务必让质检对抗角色介入进行合并前的质量把控与测试验收。” |
+
+### 🚀 商运增长军团 (Commercial & Growth Pod)
+
+| 业务环节 | 专职角色 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
+| :--- | :--- | :--- | :--- |
+| **阶段 0/1 (定位与包装)** | **营销策划官 (Marketing / CMO)** | `marketing-strategist` / `copywriting-master` / `landing-page-optimizer` | “产品必须能击中买单欲望。建议挂载 `marketing-strategist` 提炼着火痛点话术，输出高转化率 Landing Page 文案与差异化定位，绝不自嗨。” |
+| **阶段 0/6 (渠道与分发)** | **流量推广官 (Promotion / Growth)** | `growth-hacker` / `social-media-distributor` / `seo-geo-ranker` | “写代码前测转化，写完代码引爆公域。建议调用 `growth-hacker` 制定 Product Hunt、Twitter/X、Reddit、小红书冷启动打法与假门把手获客测试。” |
+| **阶段 6/上线后 (留存与反馈)** | **用户运营官 (Operations / COO)** | `community-builder` / `retention-optimizer` / `customer-success-pro` | “上线只是起点。建议接入 `community-builder` 搭建私域与客户成功通道，监控激活留存漏斗，将用户的真实吐槽与差评闭环反哺回阶段 0 迭代。” |
 
 ## 2. 路由与移交原则 (Handoff Protocol)
 

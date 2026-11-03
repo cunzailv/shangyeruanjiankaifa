@@ -295,14 +295,14 @@ DIAGRAMS = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
   }}
   .user-node {{
     background: linear-gradient(135deg, #475569 0%, #334155 100%);
     border: 1px solid #64748b;
     border-radius: 9999px;
-    padding: 8px 24px;
-    font-size: 14px;
+    padding: 6px 20px;
+    font-size: 13px;
     font-weight: 700;
     color: #f8fafc;
     display: flex;
@@ -312,71 +312,148 @@ DIAGRAMS = {
   .orchestrator-node {{
     background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
     border: 2px solid #60a5fa;
-    border-radius: 16px;
-    padding: 18px 36px;
+    border-radius: 14px;
+    padding: 12px 28px;
     text-align: center;
-    box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
-    width: 60%;
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
+    width: 65%;
   }}
-  .subagents-grid {{
+  .dual-engine-grid {{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
     width: 100%;
   }}
-  .subagent-card {{
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(148, 163, 184, 0.2);
+  .engine-column {{
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
     border-radius: 14px;
-    padding: 16px 14px;
-    text-align: center;
+    padding: 14px;
   }}
-  .subagent-role {{
+  .engine-header {{
     font-size: 14px;
     font-weight: 700;
-    color: #e2e8f0;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
   }}
-  .subagent-task {{
+  .engine-header.tech {{ color: #38bdf8; }}
+  .engine-header.biz {{ color: #fbbf24; }}
+  .cards-list {{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }}
+  .agent-card {{
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }}
+  .agent-icon {{
+    font-size: 16px;
+    margin-top: 1px;
+  }}
+  .agent-name {{
+    font-size: 12px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 2px;
+  }}
+  .agent-task {{
     font-size: 11px;
     color: #94a3b8;
-    line-height: 1.4;
+    line-height: 1.35;
   }}
 </style>
 </head>
 <body>
   <div class="card-container">
-    <div class="header-badge">多智能体工程协同</div>
-    <div class="main-title">1 个大管家 + 4 大专职独立专家团</div>
-    <div class="subtitle">打破上下文污染，职责单一化，对抗性审查保证工业级代码质量</div>
+    <div class="header-badge">双轮驱动多智能体体系</div>
+    <div class="main-title">1 个大管家 + 产研技术军团 & 商运增长军团</div>
+    <div class="subtitle">技术交付 + 营销获客闭环，打破程序员只顾写代码、上线即无人问津的死局</div>
     <div class="topo-wrapper">
-      <div class="user-node">👤 用户（创始人 / 产品决策者 / 审阅者）</div>
-      <div style="color: #60a5fa; font-size: 18px;">↕ 交互决策与阶段验收</div>
+      <div class="user-node">👤 用户（创始人 / 独立开发者 / 审阅者）</div>
+      <div style="color: #60a5fa; font-size: 13px;">↕ 商业决策与卡点验收</div>
       <div class="orchestrator-node">
-        <div style="font-size: 18px; font-weight: 800; color: #fff;">🤖 商业软件开发大管家 (Orchestrator)</div>
-        <div style="font-size: 12px; color: #bfdbfe; margin-top: 4px;">需求卡点控制 ｜ 商业模型推演 ｜ 上下文隔离派发 ｜ 统一质量验收</div>
+        <div style="font-size: 16px; font-weight: 800; color: #fff;">🤖 商业软件开发大管家 (Orchestrator)</div>
+        <div style="font-size: 11px; color: #bfdbfe; margin-top: 2px;">需求卡点控制 ｜ 商业模型推演 ｜ 上下文隔离派发 ｜ 全流程商业闭环</div>
       </div>
-      <div style="color: #94a3b8; font-size: 16px;">↓ 上下文分发与对抗流转 ↓</div>
-      <div class="subagents-grid">
-        <div class="subagent-card">
-          <div style="font-size: 20px; margin-bottom: 4px;">🔬</div>
-          <div class="subagent-role">开源调研与架构师</div>
-          <div class="subagent-task">检索 GitHub 成熟底座，算力成本核算，严禁手写业务代码。</div>
+      <div style="color: #94a3b8; font-size: 12px;">↓ 双军团协同流转与对抗验收 ↓</div>
+      <div class="dual-engine-grid">
+        <!-- 产研交付军团 -->
+        <div class="engine-column">
+          <div class="engine-header tech">
+            <span>🛠️ 产研交付军团 (Engineering)</span>
+            <span style="font-size: 11px; color: #64748b;">打造工业级稳定基座</span>
+          </div>
+          <div class="cards-list">
+            <div class="agent-card">
+              <span class="agent-icon">🔬</span>
+              <div>
+                <div class="agent-name">开源调研与架构师</div>
+                <div class="agent-task">检索成熟开源底座，核算算力与出网成本，严禁手搓通用轮子。</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <span class="agent-icon">🎨</span>
+              <div>
+                <div class="agent-name">UI/UX 规范专家</div>
+                <div class="agent-task">设计系统选型，Tailwind + Shadcn 模块化交互与响应式规约。</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <span class="agent-icon">💻</span>
+              <div>
+                <div class="agent-name">全栈开发特工</div>
+                <div class="agent-task">契约先行（Schema/API），在开源基座上实现核心差异化业务。</div>
+              </div>
+            </div>
+            <div class="agent-card" style="border-color: rgba(248, 113, 113, 0.4); background: rgba(239, 68, 68, 0.08);">
+              <span class="agent-icon">🕵️</span>
+              <div>
+                <div class="agent-name" style="color: #f87171;">QA 质检对抗官</div>
+                <div class="agent-task">专职挑刺找漏洞，端到端自动化测试拦截，未达标绝不放行。</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="subagent-card">
-          <div style="font-size: 20px; margin-bottom: 4px;">🎨</div>
-          <div class="subagent-role">UI/UX 规范专家</div>
-          <div class="subagent-task">设计系统选型，Tailwind + Shadcn 模块化交互与响应式规约。</div>
-        </div>
-        <div class="subagent-card">
-          <div style="font-size: 20px; margin-bottom: 4px;">💻</div>
-          <div class="subagent-role">全栈开发特工</div>
-          <div class="subagent-task">契约先行（Schema/API），在开源基座上实现核心定制逻辑。</div>
-        </div>
-        <div class="subagent-card" style="border-color: rgba(248, 113, 113, 0.4); background: rgba(239, 68, 68, 0.08);">
-          <div style="font-size: 20px; margin-bottom: 4px;">🕵️</div>
-          <div class="subagent-role" style="color: #f87171;">QA 对抗测试员</div>
-          <div class="subagent-task">专职挑刺找漏洞，端到端测试用例拦截，未达标绝不放行。</div>
+
+        <!-- 商运增长军团 -->
+        <div class="engine-column">
+          <div class="engine-header biz">
+            <span>🚀 商运增长军团 (Commercial Growth)</span>
+            <span style="font-size: 11px; color: #64748b;">确保有人买单与持续复购</span>
+          </div>
+          <div class="cards-list">
+            <div class="agent-card" style="border-color: rgba(251, 191, 36, 0.3); background: rgba(245, 158, 11, 0.08);">
+              <span class="agent-icon">📢</span>
+              <div>
+                <div class="agent-name" style="color: #fbbf24;">营销策划官 (Marketing / CMO)</div>
+                <div class="agent-task">痛点定级、卖点提炼、高转化落地页文案，把技术参数翻译成购买理由。</div>
+              </div>
+            </div>
+            <div class="agent-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.08);">
+              <span class="agent-icon">🚀</span>
+              <div>
+                <div class="agent-name" style="color: #34d399;">流量推广官 (Promotion / Growth)</div>
+                <div class="agent-task">冷启动渠道分发（Product Hunt/X/小红书/Reddit）、公域引流与假门把手获客测试。</div>
+              </div>
+            </div>
+            <div class="agent-card" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08);">
+              <span class="agent-icon">🎯</span>
+              <div>
+                <div class="agent-name" style="color: #c084fc;">用户运营官 (Operations / COO)</div>
+                <div class="agent-task">激活留存漏斗监控、社群与客户成功、收集真实差评反哺阶段 0 迭代。</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

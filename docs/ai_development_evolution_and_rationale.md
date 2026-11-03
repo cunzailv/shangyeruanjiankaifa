@@ -77,29 +77,32 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    User(["👤 用户 (老板 / 投资人)"]) <--> Master["🤖 大管家 (PM / 敏捷教练 / 总调度)"]
+    User(["👤 用户 (创始人 / 投资人 / 审阅者)"]) <--> Master["🤖 商业软件开发大管家 (Orchestrator 总控)"]
 
-    subgraph Team ["专家子智能体 (独立干净的 Context 与沙箱)"]
-        Architect["🔬 开源调研与架构师 (查 GitHub / 算成本 / 严禁写业务代码)"]
-        Designer["🎨 UI/UX 规范专家 (设计系统选型 / 组件排版)"]
-        Coder["💻 全栈开发特工 (基于脚手架进行二开)"]
-        QA["🕵️ 质检与对抗测试员 (专职挑刺 / 自动化测试 / 拦截缺陷)"]
+    subgraph EngineeringPod ["🛠️ 产研交付军团 (Engineering Engine)"]
+        Architect["🔬 开源调研与架构师\n(开源基座 / 算力与出网防破产)"]
+        Designer["🎨 UI/UX 规范专家\n(Tailwind+Shadcn / 设计系统)"]
+        Coder["💻 全栈开发特工\n(契约先行 / 开源二次开发)"]
+        QA["🕵️ QA 质检对抗官\n(专职挑刺 / 自动化测试拦截)"]
     end
 
-    Master -->|派发调研| Architect
-    Architect -->|交付选型报告| Master
-    Master -->|派发规范| Designer
-    Designer -->|交付设计规范| Master
-    Master -->|派发模块研发| Coder
-    Coder -->|提交代码| QA
-    QA -->|发现问题打回| Coder
-    QA -->|测试通过验收| Master
+    subgraph CommercialPod ["🚀 商运增长军团 (Commercial & Growth Engine)"]
+        Marketing["📢 营销策划官 (CMO)\n(卖点提炼 / 高转化落地页文案)"]
+        Promotion["🚀 流量推广官 (Growth)\n(PH/X/小红书/Reddit 冷启动获客)"]
+        Operations["🎯 用户运营官 (COO)\n(激活留存漏斗 / 社群 / 反馈回流)"]
+    end
+
+    Master -->|统筹派发| EngineeringPod
+    Master -->|统筹派发| CommercialPod
+    EngineeringPod -->|对抗验收交付| Master
+    CommercialPod -->|获客与需求回流| Master
 ```
 
-### 多智能体带来的降维优势：
+### 双轮驱动多智能体的降维优势：
+* **产研与商运两手硬**：彻底扭转“只顾写代码、上线即无人问津”的自嗨陷阱，技术军团管“高质量交付”，商运军团管“有人买单与持续复购”。
 * **上下文纯净度（100% 专注）**：每个子 AI 只看属于自己的上下文，彻底根除注意力稀释。
 * **对抗性质量防线**：QA 角色专门用来挑刺、跑单元测试，不达标绝不交付给大管家，彻底终结残次品流向用户的尴尬局面。
-* **用户角色升维**：用户不再是到处灭火的“改 Bug 工具人”，而是审阅关键里程碑的“技术投资人”。
+* **用户角色升维**：用户不再是到处灭火的“改 Bug 工具人”，而是审阅关键里程碑的“商业战略决策者”。
 
 ---
 
