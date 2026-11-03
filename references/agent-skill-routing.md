@@ -4,26 +4,35 @@
 
 在规划推进到特定阶段时，大管家必须参考本路由表，**主动建议**用户去安装或调用 GitHub/社区上更专业的细分 Skill，以实现多智能体协同 (Multi-Agent Collaboration)。
 
-## 1. 各阶段专业 Skill 推荐映射表 (双轮驱动：产研技术 + 商运增长)
+## 1. 各阶段专业 Skill 推荐映射表 (三大专职独立专家军团 · 12 核心角色)
 
-### 🛠️ 产研交付军团 (Engineering Pod)
+### 🛡️ 军团一：商业战略与风控军团 (Strategy & Monetization Pod)
 
-| 规划阶段 | 需要深度的专业领域 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
+| 规划阶段 / 角色 | 专职角色使命 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
 | :--- | :--- | :--- | :--- |
-| **阶段 2 (PRD与原型)** | 需求梳理、交互逻辑、低保真原型图绘制 | `product-manager-pro` / `wireframe-designer` | “商业模式已定。为了产出更严谨的原型图和需求文档，我建议您现在挂载 `product-manager-pro` Skill，让它帮您把功能点细化为可视化的页面流转图。” |
-| **阶段 3 (架构选型)** | 系统设计、微服务拆解、数据库选型、算力成本核算 | `architecture-designer` / `tech-stack-decision-matrix` | “关于具体的系统架构设计与成本防破产防线，建议您调用 `architecture-designer` 或 `tech-stack-decision-matrix`，绘制详细的系统拓扑和 ADR 架构决策。” |
-| **阶段 4 (契约与设计)** | UI/UX 设计、组件规范、Tailwind 落地 | `ui-ux-pro-max` / `frontend-design` | “我已经帮您确定了产品功能。接下来，建议您使用 `ui-ux-pro-max` Skill，让这位设计专家来帮您输出具体的 Tailwind 组件规范和交互流程。” |
-| **阶段 4 (安全合规)** | 安全审计、防注入、权限漏洞扫描、GDPR | `security-auditor` / `clawdefender` | “在确定了数据模型后，为了防止未来的 AI 越权或 Prompt 注入，建议您通过 `security-auditor` 进行一次前置安全审查。” |
-| **阶段 6 (极简编码)** | 极简代码生成、避免过度设计 | `ponytail` (Lazy/Minimalist Coder) | “规划已完成。在正式编码时，如果您希望代码极其精简、不造轮子，强烈建议您在开发全程开启 `ponytail` Skill。” |
-| **阶段 6 (代码审查)** | Code Review, 对抗性测试质量保证 | `TRAE-code-review` / `ponytail-review` | “在拆解的工单开发完成后，请务必让质检对抗角色介入进行合并前的质量把控与测试验收。” |
+| **阶段 1 (财务与定价)** | **商业模式与财务风控官 (CFO)** | `pricing-calculator` / `unit-economics-pro` | “为了确保项目具备造血能力，建议挂载 `unit-economics-pro`，推演 LTV:CAC 测算模型，制定按量/阶梯订阅定价，并锚定算力止损线。” |
+| **阶段 4 (安全与合规)** | **安全与合规审计官 (CISO / Legal)** | `security-auditor` / `compliance-checker` | “涉及出海与支付时，合规是生死线。建议调用 `security-auditor` 进行 GDPR/CCPA 审查、排查开源商业许可证冲突，并配置防 Prompt 注入与接口防刷。” |
+| **阶段 0/2 (需求规划)** | **敏捷产品需求规划师 (PM)** | `product-manager-pro` / `wireframe-designer` | “将模糊商业想法具象化。建议挂载 `product-manager-pro` 细化 ICP 与 JTBD 场景，输出核心 User Story 与低保真页面流转原型 (Wireframe)。” |
 
-### 🚀 商运增长军团 (Commercial & Growth Pod)
+### 🛠️ 军团二：产研与 AI 工程军团 (Engineering & AI Pod)
 
-| 业务环节 | 专职角色 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
+| 规划阶段 / 角色 | 专职角色使命 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
 | :--- | :--- | :--- | :--- |
-| **阶段 0/1 (定位与包装)** | **营销策划官 (Marketing / CMO)** | `marketing-strategist` / `copywriting-master` / `landing-page-optimizer` | “产品必须能击中买单欲望。建议挂载 `marketing-strategist` 提炼着火痛点话术，输出高转化率 Landing Page 文案与差异化定位，绝不自嗨。” |
-| **阶段 0/6 (渠道与分发)** | **流量推广官 (Promotion / Growth)** | `growth-hacker` / `social-media-distributor` / `seo-geo-ranker` | “写代码前测转化，写完代码引爆公域。建议调用 `growth-hacker` 制定 Product Hunt、Twitter/X、Reddit、小红书冷启动打法与假门把手获客测试。” |
-| **阶段 6/上线后 (留存与反馈)** | **用户运营官 (Operations / COO)** | `community-builder` / `retention-optimizer` / `customer-success-pro` | “上线只是起点。建议接入 `community-builder` 搭建私域与客户成功通道，监控激活留存漏斗，将用户的真实吐槽与差评闭环反哺回阶段 0 迭代。” |
+| **阶段 3 (开源基座架构)** | **开源调研与系统架构师 (Architect)** | `architecture-designer` / `tech-stack-matrix` | “绝不从 0 造轮子。建议调用 `architecture-designer`，在 GitHub 筛选成熟可商用基座，划定二开边界，并输出微服务/单体系统 ADR 架构决策。” |
+| **阶段 5 (AI 工程管线)** | **AI 工程与 Prompt 架构师 (AI Engineer)** | `prompt-engineer-pro` / `ragas-evaluator` | “AI 不是玩具。建议调用 `prompt-engineer-pro` 搭建 Agent 协作拓扑、设计 RAG 向量检索优化，并通过 Ragas 建立防幻觉与 Token 成本控制流水线。” |
+| **阶段 4 (设计系统)** | **UI/UX 规范专家 (UI/UX Designer)** | `ui-ux-pro-max` / `frontend-design` | “为了避免界面粗糙山寨，建议挂载 `ui-ux-pro-max`，基于 Tailwind + Shadcn 输出完整设计 Token、组件规范与响应式交互规约。” |
+| **阶段 6 (全栈业务落地)** | **全栈研发特工 (Full-Stack Engineer)** | `ponytail` (Lazy Minimalist Coder) | “规划已完全契约化。建议开启 `ponytail` 特工，以最精简、高可维护的代码在开源基座上实现核心定制业务，拒绝过度工程。” |
+| **阶段 6 (云基础设施)** | **DevOps 与云运维专家 (DevOps / SRE)** | `docker-devops-pro` / `cloudflare-infra` | “上线必须稳定防宕机。建议调用 `docker-devops-pro` 构建 CI/CD 流水线、Docker 容器化镜像，并配置 Cloudflare R2 零出网存储与高并发 CDN。” |
+| **阶段 6 (质量验收)** | **QA 质检对抗官 (QA Specialist)** | `qa-adversarial-tester` / `code-reviewer` | “开发绝不能自己测自己。建议引入 `qa-adversarial-tester` 进行独立沙箱自动化 E2E 挑刺测试，缺陷不归零绝不放行上线。” |
+
+### 🚀 军团三：商运增长与数据军团 (Growth & Operations Pod)
+
+| 规划阶段 / 角色 | 专职角色使命 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
+| :--- | :--- | :--- | :--- |
+| **阶段 0/1 (定位与包装)** | **营销策划官 (Marketing / CMO)** | `marketing-strategist` / `copywriting-master` | “产品必须能击中买单欲望。建议挂载 `marketing-strategist` 提炼着火痛点话术，输出高转化率 Landing Page 文案与差异化定位，绝不自嗨。” |
+| **阶段 0/6 (渠道与获客)** | **流量推广官 (Promotion / Growth)** | `growth-hacker` / `social-media-distributor` | “写代码前测转化，写完代码引爆公域。建议调用 `growth-hacker` 制定 Product Hunt、Twitter/X、Reddit、小红书冷启动打法与假门把手获客测试。” |
+| **阶段 6/上线后 (社群留存)** | **用户运营官 (Operations / COO)** | `community-builder` / `customer-success-pro` | “上线只是起点。建议接入 `community-builder` 搭建私域社群与客户成功通道，监控激活留存漏斗，将用户的真实吐槽与差评闭环反哺回阶段 0 迭代。” |
+| **阶段 6/持续运营 (数据归因)** | **数据分析与归因专家 (Data Analyst / BI)** | `growth-bi-analyst` / `funnel-tracker` | “没有数据就是盲打。建议调用 `growth-bi-analyst` 建立全链路埋点方案、追踪 Cohort 留存曲线，并通过 A/B 测试科学验证商业假设。” |
 
 ## 2. 路由与移交原则 (Handoff Protocol)
 

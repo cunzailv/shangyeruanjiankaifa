@@ -79,30 +79,41 @@ flowchart LR
 flowchart TD
     User(["👤 用户 (创始人 / 投资人 / 审阅者)"]) <--> Master["🤖 商业软件开发大管家 (Orchestrator 总控)"]
 
-    subgraph EngineeringPod ["🛠️ 产研交付军团 (Engineering Engine)"]
-        Architect["🔬 开源调研与架构师\n(开源基座 / 算力与出网防破产)"]
-        Designer["🎨 UI/UX 规范专家\n(Tailwind+Shadcn / 设计系统)"]
-        Coder["💻 全栈开发特工\n(契约先行 / 开源二次开发)"]
-        QA["🕵️ QA 质检对抗官\n(专职挑刺 / 自动化测试拦截)"]
+    subgraph StrategyPod ["🛡️ 商业战略与风控军团"]
+        CFO["💰 商业模式与财务风控官 (CFO)\n(单客经济学 / 定价阶梯 / 算力止损线)"]
+        CISO["⚖️ 安全与合规审计官 (CISO)\n(GDPR合规 / 开源商业许可 / 防注入防刷)"]
+        PM["📋 敏捷产品需求规划师 (PM)\n(ICP画像 / JTBD场景 / Wireframe原型)"]
     end
 
-    subgraph CommercialPod ["🚀 商运增长军团 (Commercial & Growth Engine)"]
-        Marketing["📢 营销策划官 (CMO)\n(卖点提炼 / 高转化落地页文案)"]
-        Promotion["🚀 流量推广官 (Growth)\n(PH/X/小红书/Reddit 冷启动获客)"]
-        Operations["🎯 用户运营官 (COO)\n(激活留存漏斗 / 社群 / 反馈回流)"]
+    subgraph EngineeringPod ["🛠️ 产研与 AI 工程军团"]
+        Architect["🔬 开源系统架构师\n(开源基座二开 / ADR架构决策)"]
+        AIEngineer["🧠 AI 工程架构师\n(Agent拓扑 / RAG调优 / Ragas防幻觉)"]
+        Designer["🎨 UI/UX 规范专家\n(Tailwind+Shadcn / 设计Token)"]
+        Coder["💻 全栈开发特工\n(契约先行 / 开源二次开发实现)"]
+        DevOps["⚡ DevOps 与运维 SRE\n(CI/CD / Docker容器化 / R2零出网)"]
+        QA["🕵️ QA 质检对抗官\n(独立挑刺 / 自动化E2E拦截缺陷)"]
     end
 
-    Master -->|统筹派发| EngineeringPod
-    Master -->|统筹派发| CommercialPod
+    subgraph GrowthPod ["🚀 商运增长与数据军团"]
+        Marketing["📢 营销策划官 (CMO)\n(痛点定级 / 卖点提炼 / Landing Page文案)"]
+        Promotion["🚀 流量推广官 (Growth)\n(PH/X/小红书/Reddit 冷启动 / 烟雾测试)"]
+        Operations["🎯 用户运营官 (COO)\n(激活留存漏斗 / 社群 / 差评反哺阶段0)"]
+        DataBI["📊 数据归因分析师 (BI)\n(全链路埋点 / Cohort留存 / A/B测试)"]
+    end
+
+    Master -->|统筹派发与阶段卡点| StrategyPod
+    Master -->|统筹派发与阶段卡点| EngineeringPod
+    Master -->|统筹派发与阶段卡点| GrowthPod
+    StrategyPod -->|商业与合规防线| Master
     EngineeringPod -->|对抗验收交付| Master
-    CommercialPod -->|获客与需求回流| Master
+    GrowthPod -->|获客、留存与需求反哺| Master
 ```
 
-### 双轮驱动多智能体的降维优势：
-* **产研与商运两手硬**：彻底扭转“只顾写代码、上线即无人问津”的自嗨陷阱，技术军团管“高质量交付”，商运军团管“有人买单与持续复购”。
-* **上下文纯净度（100% 专注）**：每个子 AI 只看属于自己的上下文，彻底根除注意力稀释。
-* **对抗性质量防线**：QA 角色专门用来挑刺、跑单元测试，不达标绝不交付给大管家，彻底终结残次品流向用户的尴尬局面。
-* **用户角色升维**：用户不再是到处灭火的“改 Bug 工具人”，而是审阅关键里程碑的“商业战略决策者”。
+### 三大独立专家军团（12 核心角色）的降维优势：
+* **彻底根绝业务盲区与暗礁**：缺合规会被罚款封店，缺 DevOps 会瞬时宕机，缺 AI 架构会幻觉与 Token 账单破产，缺数据分析会导致投放盲打——12 个专家角色彻底封堵所有单点崩溃风险。
+* **职责单一与上下文纯净（100% 专注）**：每个专职 AI 独立沙箱运行，只看属于自己的业务上下文，彻底根除注意力稀释。
+* **对抗性质量防线**：QA 角色专门用来挑刺、跑自动化用例，不达标绝不交付给大管家，彻底终结残次品流向用户的尴尬局面。
+* **用户角色升维**：用户不再是到处灭火的“改 Bug 工具人”，而是审阅关键里程碑、掌控全局的“商业战略决策者”。
 
 ---
 

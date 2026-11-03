@@ -291,83 +291,91 @@ DIAGRAMS = {
 <meta charset="utf-8">
 {COMMON_STYLE}
 <style>
+  .card-container {{
+    max-width: 1160px;
+    padding: 28px 30px;
+  }}
   .topo-wrapper {{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
   }}
   .user-node {{
     background: linear-gradient(135deg, #475569 0%, #334155 100%);
     border: 1px solid #64748b;
     border-radius: 9999px;
-    padding: 6px 20px;
-    font-size: 13px;
+    padding: 5px 18px;
+    font-size: 12px;
     font-weight: 700;
     color: #f8fafc;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }}
   .orchestrator-node {{
     background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
     border: 2px solid #60a5fa;
-    border-radius: 14px;
-    padding: 12px 28px;
+    border-radius: 12px;
+    padding: 10px 24px;
     text-align: center;
     box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
-    width: 65%;
+    width: 60%;
   }}
-  .dual-engine-grid {{
+  .tri-pods-grid {{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: 290px 1fr 290px;
+    gap: 14px;
     width: 100%;
   }}
-  .engine-column {{
-    background: rgba(15, 23, 42, 0.6);
+  .pod-column {{
+    background: rgba(15, 23, 42, 0.65);
     border: 1px solid rgba(148, 163, 184, 0.15);
-    border-radius: 14px;
-    padding: 14px;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
   }}
-  .engine-header {{
-    font-size: 14px;
+  .pod-header {{
+    font-size: 13px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 6px;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
   }}
-  .engine-header.tech {{ color: #38bdf8; }}
-  .engine-header.biz {{ color: #fbbf24; }}
+  .pod-header.strategy {{ color: #f59e0b; }}
+  .pod-header.tech {{ color: #38bdf8; }}
+  .pod-header.growth {{ color: #10b981; }}
   .cards-list {{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
+    flex: 1;
   }}
   .agent-card {{
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(148, 163, 184, 0.15);
-    border-radius: 10px;
-    padding: 8px 12px;
+    background: rgba(30, 41, 59, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 8px;
+    padding: 7px 10px;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }}
   .agent-icon {{
-    font-size: 16px;
+    font-size: 15px;
     margin-top: 1px;
   }}
   .agent-name {{
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #f1f5f9;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
   }}
   .agent-task {{
-    font-size: 11px;
+    font-size: 10px;
     color: #94a3b8;
     line-height: 1.35;
   }}
@@ -375,82 +383,134 @@ DIAGRAMS = {
 </head>
 <body>
   <div class="card-container">
-    <div class="header-badge">双轮驱动多智能体体系</div>
-    <div class="main-title">1 个大管家 + 产研技术军团 & 商运增长军团</div>
-    <div class="subtitle">技术交付 + 营销获客闭环，打破程序员只顾写代码、上线即无人问津的死局</div>
+    <div class="header-badge">全景多智能体专家矩阵</div>
+    <div class="main-title">1 个大管家 + 三大专职独立专家军团（12 核心角色）</div>
+    <div class="subtitle">战略风控兜底 ｜ 产研工程攻坚 ｜ 商运数据增长，彻底告别单兵作弊与角色放水</div>
     <div class="topo-wrapper">
       <div class="user-node">👤 用户（创始人 / 独立开发者 / 审阅者）</div>
-      <div style="color: #60a5fa; font-size: 13px;">↕ 商业决策与卡点验收</div>
+      <div style="color: #60a5fa; font-size: 12px;">↕ 商业决策指令 ｜ 阶段卡点验收</div>
       <div class="orchestrator-node">
-        <div style="font-size: 16px; font-weight: 800; color: #fff;">🤖 商业软件开发大管家 (Orchestrator)</div>
-        <div style="font-size: 11px; color: #bfdbfe; margin-top: 2px;">需求卡点控制 ｜ 商业模型推演 ｜ 上下文隔离派发 ｜ 全流程商业闭环</div>
+        <div style="font-size: 15px; font-weight: 800; color: #fff;">🤖 商业软件开发大管家 (Orchestrator)</div>
+        <div style="font-size: 10.5px; color: #bfdbfe; margin-top: 2px;">流程卡点控制 ｜ 商业模型推演 ｜ 专家沙箱派发 ｜ 全局交付验收</div>
       </div>
-      <div style="color: #94a3b8; font-size: 12px;">↓ 双军团协同流转与对抗验收 ↓</div>
-      <div class="dual-engine-grid">
-        <!-- 产研交付军团 -->
-        <div class="engine-column">
-          <div class="engine-header tech">
-            <span>🛠️ 产研交付军团 (Engineering)</span>
-            <span style="font-size: 11px; color: #64748b;">打造工业级稳定基座</span>
+      <div style="color: #94a3b8; font-size: 11px;">↓ 上下文精准派发 ｜ 独立沙箱专家团协同流转 ↓</div>
+      <div class="tri-pods-grid">
+        <!-- 军团一：战略与风控 -->
+        <div class="pod-column">
+          <div class="pod-header strategy">
+            <span>🛡️ 战略与风控军团</span>
+            <span style="font-size: 10px; color: #64748b;">商业兜底</span>
           </div>
           <div class="cards-list">
-            <div class="agent-card">
-              <span class="agent-icon">🔬</span>
+            <div class="agent-card" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.06);">
+              <span class="agent-icon">💰</span>
               <div>
-                <div class="agent-name">开源调研与架构师</div>
-                <div class="agent-task">检索成熟开源底座，核算算力与出网成本，严禁手搓通用轮子。</div>
+                <div class="agent-name" style="color: #fbbf24;">商业模式与财务风控官 (CFO)</div>
+                <div class="agent-task">单客经济学测算(LTV>3×CAC)、阶梯定价体系、防破产算力止损线。</div>
               </div>
             </div>
-            <div class="agent-card">
-              <span class="agent-icon">🎨</span>
+            <div class="agent-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.06);">
+              <span class="agent-icon">⚖️</span>
               <div>
-                <div class="agent-name">UI/UX 规范专家</div>
-                <div class="agent-task">设计系统选型，Tailwind + Shadcn 模块化交互与响应式规约。</div>
+                <div class="agent-name" style="color: #f87171;">安全与合规审计官 (CISO)</div>
+                <div class="agent-task">出海隐私合规(GDPR/CCPA)、开源商业许可审查、防 Prompt 注入与接口防刷。</div>
               </div>
             </div>
-            <div class="agent-card">
-              <span class="agent-icon">💻</span>
+            <div class="agent-card" style="border-color: rgba(148, 163, 184, 0.25);">
+              <span class="agent-icon">📋</span>
               <div>
-                <div class="agent-name">全栈开发特工</div>
-                <div class="agent-task">契约先行（Schema/API），在开源基座上实现核心差异化业务。</div>
-              </div>
-            </div>
-            <div class="agent-card" style="border-color: rgba(248, 113, 113, 0.4); background: rgba(239, 68, 68, 0.08);">
-              <span class="agent-icon">🕵️</span>
-              <div>
-                <div class="agent-name" style="color: #f87171;">QA 质检对抗官</div>
-                <div class="agent-task">专职挑刺找漏洞，端到端自动化测试拦截，未达标绝不放行。</div>
+                <div class="agent-name">敏捷产品需求规划师 (PM)</div>
+                <div class="agent-task">ICP 与 JTBD 场景细化、User Story 拆解、低保真交互原型(Wireframe)。</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 商运增长军团 -->
-        <div class="engine-column">
-          <div class="engine-header biz">
-            <span>🚀 商运增长军团 (Commercial Growth)</span>
-            <span style="font-size: 11px; color: #64748b;">确保有人买单与持续复购</span>
+        <!-- 军团二：产研与 AI 工程 -->
+        <div class="pod-column">
+          <div class="pod-header tech">
+            <span>🛠️ 产研与 AI 工程军团</span>
+            <span style="font-size: 10px; color: #64748b;">高质量交付</span>
+          </div>
+          <div class="cards-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+            <div class="agent-card">
+              <span class="agent-icon">🔬</span>
+              <div>
+                <div class="agent-name">开源架构师</div>
+                <div class="agent-task">成熟开源底座检索与选型，严禁手搓通用轮子。</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <span class="agent-icon">🧠</span>
+              <div>
+                <div class="agent-name">AI 工程架构师</div>
+                <div class="agent-task">Agent拓扑、RAG优化、Prompt评测与降级。</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <span class="agent-icon">🎨</span>
+              <div>
+                <div class="agent-name">UI/UX 专家</div>
+                <div class="agent-task">Tailwind+Shadcn 设计系统、组件与响应式规范。</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <span class="agent-icon">💻</span>
+              <div>
+                <div class="agent-name">全栈特工</div>
+                <div class="agent-task">契约先行(Schema/API)，基于开源底座二开。</div>
+              </div>
+            </div>
+            <div class="agent-card">
+              <span class="agent-icon">⚡</span>
+              <div>
+                <div class="agent-name">DevOps/SRE</div>
+                <div class="agent-task">CI/CD、Docker容器化、Cloudflare R2 零出网存储。</div>
+              </div>
+            </div>
+            <div class="agent-card" style="border-color: rgba(248, 113, 113, 0.4); background: rgba(239, 68, 68, 0.08);">
+              <span class="agent-icon">🕵️</span>
+              <div>
+                <div class="agent-name" style="color: #f87171;">QA质检对抗官</div>
+                <div class="agent-task">独立挑刺找漏洞、自动化 E2E 拦截缺陷。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 军团三：商运增长与数据 -->
+        <div class="pod-column">
+          <div class="pod-header growth">
+            <span>🚀 商运增长与数据军团</span>
+            <span style="font-size: 10px; color: #64748b;">获客与增长</span>
           </div>
           <div class="cards-list">
-            <div class="agent-card" style="border-color: rgba(251, 191, 36, 0.3); background: rgba(245, 158, 11, 0.08);">
+            <div class="agent-card" style="border-color: rgba(251, 191, 36, 0.3); background: rgba(245, 158, 11, 0.06);">
               <span class="agent-icon">📢</span>
               <div>
-                <div class="agent-name" style="color: #fbbf24;">营销策划官 (Marketing / CMO)</div>
-                <div class="agent-task">痛点定级、卖点提炼、高转化落地页文案，把技术参数翻译成购买理由。</div>
+                <div class="agent-name" style="color: #fbbf24;">营销策划官 (CMO)</div>
+                <div class="agent-task">痛点定级、卖点提炼、高转化落地页与 SEO/GEO 文案。</div>
               </div>
             </div>
-            <div class="agent-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.08);">
+            <div class="agent-card" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.06);">
               <span class="agent-icon">🚀</span>
               <div>
-                <div class="agent-name" style="color: #34d399;">流量推广官 (Promotion / Growth)</div>
-                <div class="agent-task">冷启动渠道分发（Product Hunt/X/小红书/Reddit）、公域引流与假门把手获客测试。</div>
+                <div class="agent-name" style="color: #34d399;">流量推广官 (Growth)</div>
+                <div class="agent-task">Product Hunt/X/小红书冷启动投放、假门把手获客测试。</div>
               </div>
             </div>
-            <div class="agent-card" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08);">
+            <div class="agent-card" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.06);">
               <span class="agent-icon">🎯</span>
               <div>
-                <div class="agent-name" style="color: #c084fc;">用户运营官 (Operations / COO)</div>
-                <div class="agent-task">激活留存漏斗监控、社群与客户成功、收集真实差评反哺阶段 0 迭代。</div>
+                <div class="agent-name" style="color: #c084fc;">用户运营官 (COO)</div>
+                <div class="agent-task">激活留存漏斗、社群沉淀、客户成功(CS)与差评回流。</div>
+              </div>
+            </div>
+            <div class="agent-card" style="border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.06);">
+              <span class="agent-icon">📊</span>
+              <div>
+                <div class="agent-name" style="color: #38bdf8;">数据归因分析师 (BI)</div>
+                <div class="agent-task">全链路埋点体系、Cohort 留存分析、A/B 测试实验。</div>
               </div>
             </div>
           </div>
@@ -651,8 +711,10 @@ async def render_all():
     async with async_playwright() as p:
         browser = await p.chromium.launch()
         for filename, html_content in DIAGRAMS.items():
+            vw = 1200 if "03_multi" in filename else 1040
+            vh = 820 if "03_multi" in filename else 620
             page = await browser.new_page(
-                viewport={"width": 1040, "height": 600},
+                viewport={"width": vw, "height": vh},
                 device_scale_factor=2
             )
             await page.set_content(html_content)
