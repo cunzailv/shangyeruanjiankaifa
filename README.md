@@ -88,14 +88,11 @@ flowchart LR
 .
 ├── LICENSE                  # ⚖️ 开源协议：MIT License
 ├── SKILL.md                 # 🧠 主控大脑：定义 Agent 的行为准则、交互模式与 7 大阶段卡点
-├── docs/                    # 📚 深度演进纪实、实战工程手册与公众号专栏
+├── docs/                    # 📚 深度演进纪实、实战工程手册与架构报告
 │   ├── ai_development_evolution_and_rationale.md # 思想演进全纪实与实施总则（白皮书）
 │   ├── ai_engineering_playbook.md                # 商业闭环与多智能体实战手册
 │   ├── tech_stack_architecture_report.md         # 六大多模态赛道黄金技术栈深度报告
-│   ├── wechat_article_commercial_loop.md         # 微信公众号深度专栏长文
-│   ├── wechat_article_preview.html               # 微信富文本一键复制排版预览器
-│   └── images/                                   # 2x Retina 高清项目配图
-│       ├── wechat_cover.jpg                      # 16:9 3D 渲染文章封面
+│   └── images/                                   # 2x Retina 高清项目架构与流程图
 │       ├── 01_four_step_evolution.png            # 思想演进四大核心台阶
 │       ├── 02_vanity_vs_commercial_loop.png      # 技术自嗨陷阱 vs 商业闭环对比
 │       ├── 03_multi_agent_orchestration.png      # 三大专家军团 12 核心角色矩阵
@@ -113,8 +110,7 @@ flowchart LR
 │   ├── project-type-strategies.md# 不同类型项目的差异化分析策略
 │   └── tech-stack-matrix.md      # 黄金技术栈与平滑演进架构指南
 └── scripts/                 # ⚙️ 自动化构建脚本
-    ├── generate_article_diagrams.py # Playwright 高清配图自动化渲染脚本
-    └── generate_wechat_html.js      # 微信公众号富文本生成脚本
+    └── generate_article_diagrams.py # Playwright 高清架构配图自动化渲染脚本
 ```
 
 ---
@@ -124,8 +120,6 @@ flowchart LR
 | 文档名称 | 路径 | 说明 |
 | :--- | :--- | :--- |
 | **思想演进全纪实与实施总则** | [docs/ai_development_evolution_and_rationale.md](docs/ai_development_evolution_and_rationale.md) | 深度剖析 AI 研发痛点根源、多智能体破局、商业需求终局与资产沉淀全景 |
-| **微信公众号深度专栏长文** | [docs/wechat_article_commercial_loop.md](docs/wechat_article_commercial_loop.md) | 面向自媒体与技术社区的深度长文，含 12 角色矩阵与全套 Retina 配图 |
-| **微信富文本排版预览器** | [docs/wechat_article_preview.html](docs/wechat_article_preview.html) | 本地浏览器一键打开，提供“一键复制富文本到微信公众号后台”按钮 |
 | **商业闭环与研发实战手册** | [docs/ai_engineering_playbook.md](docs/ai_engineering_playbook.md) | 涵盖 JTBD 验真自检、防破产算力架构、六大黄金栈与 Master Prompt |
 | **多模态架构与技术选型报告** | [docs/tech_stack_architecture_report.md](docs/tech_stack_architecture_report.md) | 六大多模态赛道（写作/出图/写歌/播客/视频/伴侣）工业级选型矩阵 |
 

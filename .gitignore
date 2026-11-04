@@ -1,0 +1,12 @@
+# Local drafts and promotional articles (not for open source repo)
+drafts/
+articles/
+*wechat*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Dependencies & logs
+node_modules/
+*.log
