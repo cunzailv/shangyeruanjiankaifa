@@ -1,5 +1,8 @@
 # 💼 商业软件开发大管家 (Project Development Planner)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/cunzailv/shangyeruanjiankaifa?style=social)](https://github.com/cunzailv/shangyeruanjiankaifa)
+
 > **“按部就班的研发流程只是执行手段。如果不把【用户需求先行】和【商业闭环】放在最前头，用最顶级的架构写出来的也只是无人买单的自嗨废品。”**
 
 这是一个面向创始人、CTO、独立开发者（Indie Hacker）与技术团队打造的高阶“大管家”智能体 Skill。它不负责底层的盲目手写代码，而是化身为你的 **CEO、CFO、CMO、产品总监与首席架构师**，以 **“需求验真先行，商业闭环兜底，开源基座起步，三大军团协同，安全合规并重”** 为核心信条，通过严谨的 **7 阶段商业落地流水线 (Stage Gates)**，帮你把一个模糊的“点子”一步步拆解为可盈利、可落地的敏捷工程工单。
@@ -83,6 +86,7 @@ flowchart LR
 
 ```text
 .
+├── LICENSE                  # ⚖️ 开源协议：MIT License
 ├── SKILL.md                 # 🧠 主控大脑：定义 Agent 的行为准则、交互模式与 7 大阶段卡点
 ├── docs/                    # 📚 深度演进纪实、实战工程手册与公众号专栏
 │   ├── ai_development_evolution_and_rationale.md # 思想演进全纪实与实施总则（白皮书）
@@ -167,3 +171,9 @@ Claude 的 Projects 功能自带强大的 Knowledge (知识库) 和 Custom Instr
 1. 将 `SKILL.md` 的内容完整复制。
 2. 粘贴给 AI，并在末尾附上：
    > `请扮演上述的“商业软件开发大管家”角色。现在我们开始阶段 0，我想做一个【这里填入你的构想】。由于你无法直接读取本地文件，在后续阶段中，如果需要参考特定的资产模板或知识库字典，请告诉我，我会将文件内容粘贴给你。`
+
+---
+
+## 📄 开源许可证 (License)
+
+本项目采用 [MIT License](LICENSE) 开源协议。无论是商业应用、团队自用、开源二次开发还是打包集成，均可免费自由使用与修改，只需保留原作者版权声明即可。
