@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![DSH Plugin](https://img.shields.io/badge/DSH-Plugin-6C5CE7.svg)](#-安装与快速开始)
+[![npm](https://img.shields.io/npm/v/dsh-business-planner.svg)](https://www.npmjs.com/package/dsh-business-planner)
 [![GitHub stars](https://img.shields.io/github/stars/cunzailv/shangyeruanjiankaifa?style=social)](https://github.com/cunzailv/shangyeruanjiankaifa)
 
 > **“按部就班的研发流程只是执行手段。如果不把【用户需求先行】和【商业闭环】放在最前头，用最顶级的架构写出来的也只是无人买单的自嗨废品。”**
@@ -239,19 +240,22 @@ flowchart LR
 
 ### 方式一：DSH 桌面版（推荐）
 
-打开 **Plugins** 页 → 安装本地插件 → 选择本仓库目录（或粘贴仓库地址）。装完**新开一个会话**即可使用。
+打开 **Plugins** 页 → 安装本地插件 → 选择本仓库目录；或直接粘贴包名 `dsh-business-planner` 从 npm 安装。装完**新开一个会话**即可使用。
 
 ### 方式二：DSH CLI
 
 ```bash
-# 从 GitHub 直接安装
+# 从 npm 安装（推荐）
+dsh plugin --profile web add dsh-business-planner
+
+# 从 GitHub 安装（跟踪 main 分支）
 dsh plugin --profile web add github:cunzailv/shangyeruanjiankaifa
 
 # 本地开发：link 到仓库目录，改 SKILL.md / 代码后重新加载即可生效
 dsh plugin --profile web add link:/绝对路径/到本仓库
 ```
 
-> 目前尚未发布到 npm（本项目包名为 `dsh-business-planner`）。npm 上另有一个 `dsh-project-planner` 与本项目无关，注意别装错。
+> 已发布到 npm：[`dsh-business-planner@0.1.0`](https://www.npmjs.com/package/dsh-business-planner)。npm 上另有一个 `dsh-project-planner` 与本项目无关，注意别装错。
 
 ### 唤醒大管家
 

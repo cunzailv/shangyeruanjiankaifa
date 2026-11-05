@@ -36,7 +36,20 @@
   },
   "icon": "./icon.svg",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cunzailv/shangyeruanjiankaifa.git"
+  },
+  "homepage": "https://github.com/cunzailv/shangyeruanjiankaifa#readme",
+  "bugs": {
+    "url": "https://github.com/cunzailv/shangyeruanjiankaifa/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
-    "test": "node test/smoke.mjs"
+    "test": "node test/smoke.mjs",
+    "prepublishOnly": "node test/smoke.mjs"
   }
 }
