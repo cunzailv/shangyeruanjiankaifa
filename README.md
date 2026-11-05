@@ -101,6 +101,83 @@ flowchart LR
 
 > 数据抓取自 GitHub API，截至 **2026-11-05**；复用时请复核，Star 数不等于可商用。
 
+<details>
+<summary><b>📊 点开查看完整榜单：38 个仓库按 8 类形态分组（含最后提交时间与判决）</b></summary>
+
+**① SaaS 基座 / 脚手架**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [nextjs/saas-starter](https://github.com/nextjs/saas-starter) | 16.2k | MIT | 2025-12 | ✅ 首推基座（薄，需自建业务） |
+| [ixartz/Next-js-Boilerplate](https://github.com/ixartz/Next-js-Boilerplate) | 13.1k | MIT | 2026-11 | ✅ 抄工程化配置 |
+| [t3-oss/create-t3-app](https://github.com/t3-oss/create-t3-app) | 29.2k | MIT | 2025-12 | ✅ 类型安全脚手架（已趋稳定） |
+| [vercel/nextjs-subscription-payments](https://github.com/vercel/nextjs-subscription-payments) | 7.7k | MIT | 2025-01 | ❌ 已归档 |
+| [medusajs/medusa](https://github.com/medusajs/medusa) | 37.1k | MIT + EE 目录 | 2026-11 | ✅ 电商后端（EE 部分另许） |
+
+**② 二开 / 重构参考**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [calcom/cal.diy](https://github.com/calcom/cal.diy) | 49.7k | MIT | 2026-11 | ✅ 抄 Monorepo 拆分，别整仓 fork |
+| [twentyhq/twenty](https://github.com/twentyhq/twenty) | 60.5k | AGPLv3 + 商业例外 | 2026-11 | ⚠️ 只读结构，不可闭源二开 |
+| [documenso/documenso](https://github.com/documenso/documenso) | 15.7k | AGPL-3.0 | 2026-11 | ❌ 仅作合规读本 |
+| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 65.4k | 自定义（AGPL 系） | 2026-11 | ⚠️ 私有化可用，商用需核对 |
+
+**③ AI 对话 / 写作**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [vercel/chatbot](https://github.com/vercel/chatbot) | 21.0k | Apache-2.0 | 2026-11 | ✅ 对话产品骨架 |
+| [steven-tey/novel](https://github.com/steven-tey/novel) | 16.5k | Apache-2.0 | 2025-01 | ⚠️ 停更，仅作结构参考 |
+| [langgenius/dify](https://github.com/langgenius/dify) | 160.5k | 修改版 Apache-2.0 | 2026-11 | ⚠️ 平台形态参考，多租户需核对 |
+
+**④ AI 绘图 / 画布**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 145.2k | GPL-3.0 | 2026-11 | ⚠️ 只能独立进程调用 |
+| [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | 165.3k | AGPL-3.0 | 2026-03 | ❌ 只能读 |
+| [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) | 135.2k | MIT | 2026-11 | ✅ 画布层可商用 |
+| [tldraw/tldraw](https://github.com/tldraw/tldraw) | 51.3k | 自定义（水印/商用授权） | 2026-11 | ⚠️ 商用前核对条款 |
+
+**⑤ AI 音频 / 视频**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [openai/whisper](https://github.com/openai/whisper) | 112.0k | MIT | 2026-08 | ✅ 转写管线可直接用 |
+| [remotion-dev/remotion](https://github.com/remotion-dev/remotion) | 70.9k | 自定义（按实体规模） | 2026-11 | ⚠️ 公司规模超阈值需付费 |
+
+**⑥ 实时语音 / Agent 编排**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [livekit/livekit](https://github.com/livekit/livekit) | 22.1k | Apache-2.0 | 2026-11 | ✅ WebRTC 基座 |
+| [livekit/agents](https://github.com/livekit/agents) | 15.1k | Apache-2.0 | 2026-11 | ✅ 核心+插件范式 |
+| [pipecat-ai/pipecat](https://github.com/pipecat-ai/pipecat) | 17.1k | BSD-2-Clause | 2026-11 | ✅ 语音管线，商用友好 |
+| [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 60.5k | MIT | 2026-11 | ✅ 角色分工骨架 |
+| [n8n-io/n8n](https://github.com/n8n-io/n8n) | 209.6k | fair-code 自定义 | 2026-11 | ⚠️ 对外售卖服务需授权 |
+| [FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise) | 55.6k | 自定义 | 2026-08 | ❌ 已归档 |
+
+**⑦ 企业 RAG / 知识库**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | 93.6k | Apache-2.0 | 2026-11 | ✅ 私有化底座 |
+| [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 149.1k | MIT | 2026-11 | ✅ 只作积木 |
+| [qdrant/qdrant](https://github.com/qdrant/qdrant) | 35.4k | Apache-2.0 | 2026-11 | ✅ 向量库 |
+
+**⑧ 平台侧基建（计费 / 观测 / 部署 / BaaS）**
+| 仓库 | ★ | 许可 | 最后提交 | 判决 |
+| :--- | :--- | :--- | :--- | :--- |
+| [polarsource/polar](https://github.com/polarsource/polar) | 10.5k | Apache-2.0 | 2026-11 | ✅ 计费中台 |
+| [PostHog/posthog](https://github.com/PostHog/posthog) | 40.7k | MIT 核心 + EE | 2026-11 | ⚠️ EE 目录另许 |
+| [langfuse/langfuse](https://github.com/langfuse/langfuse) | 37.1k | MIT 核心 + EE | 2026-11 | ⚠️ EE 目录另许 |
+| [vibrantlabsai/ragas](https://github.com/vibrantlabsai/ragas) | 16.2k | Apache-2.0 | 2026-02 | ✅ 评测基线 |
+| [triggerdotdev/trigger.dev](https://github.com/triggerdotdev/trigger.dev) | 16.7k | Apache-2.0 | 2026-11 | ✅ 长任务异步 |
+| [inngest/inngest](https://github.com/inngest/inngest) | 6.0k | SSPL（非 OSI） | 2026-11 | ❌ 自托管有约束 |
+| [coollabsio/coolify](https://github.com/coollabsio/coolify) | 65.7k | Apache-2.0 | 2026-11 | ✅ 自托管交付 |
+| [Dokploy/dokploy](https://github.com/Dokploy/dokploy) | 38.2k | 含 proprietary 目录 | 2026-11 | ⚠️ 商用需核对 |
+| [supabase/supabase](https://github.com/supabase/supabase) | 114.6k | Apache-2.0 | 2026-11 | ✅ RLS 多租户 |
+| [appwrite/appwrite](https://github.com/appwrite/appwrite) | 57.9k | BSD-3-Clause | 2026-11 | ✅ 自托管 + 商用 |
+| [toeverything/AFFiNE](https://github.com/toeverything/AFFiNE) | 74.2k | 部分目录另许 | 2026-11 | ⚠️ CRDT 读本 |
+
+</details>
+
+> 每个仓库的**真实顶层目录结构**与"该抄哪层 / 别抄哪层"的判断，见案例库第 6 节《目录结构速读》。
+
 ---
 
 ## 📁 目录结构说明

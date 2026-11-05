@@ -96,7 +96,115 @@ curl -s "https://api.github.com/repos/nextjs/saas-starter" | \
 
 ---
 
-## 6. 阶段 3 输出模板：开源底座评估矩阵 (Case Evaluation Matrix)
+## 6. 目录结构速读：这些仓库到底长什么样 (Repo Anatomy)
+
+说"借那一层"之前，得先知道那层长什么样。以下是 10 个主力基座的**真实顶层结构**（GitHub contents API 抓取，2026-11-05），以及"该抄 / 别抄"的判断。
+
+### 6.1 骨架型（薄，专供 fork）
+
+**`nextjs/saas-starter`** ★16.2k · MIT
+```text
+app/  components/  lib/  middleware.ts  drizzle.config.ts
+```
+- **形态**：极薄的三层结构 —— 路由（`app/`）、组件（`components/`）、业务与数据访问（`lib/`），`middleware.ts` 承担鉴权拦截，`drizzle.config.ts` 是唯一的数据契约。
+- **该抄**：`lib/` 里把「鉴权、订阅、Stripe Webhook」拆成独立模块的写法；租户字段如何贯穿。
+- **别抄**：示例页面与营销文案。这套骨架的业务层厚度几乎为零，PRD 里 70% 的功能要你自己写。
+
+**`ixartz/Next-js-Boilerplate`** ★13.1k · MIT
+```text
+src/  migrations/  tests/  .storybook/  .github/  playwright.config.ts
+knip.config.ts  oxlint.config.ts  commitlint.config.ts  crowdin.yml  lefthook.yml
+```
+- **形态**：`src/` 单目录应用 + `migrations/` 数据库迁移 + 一整套"工程化外挂"（Storybook 组件工作台、Playwright 端到端、Crowdin 多语言、lefthook 提交钩子、knip 死代码检测）。
+- **该抄**：**配置文件的组合方式**——这就是它 13k 星的全部价值；团队协作规范可直接照搬。
+- **别抄**：不要为了"全家桶齐全"把这些工具全塞进小项目，否则第一天就在配 lint 规则而不是写功能。
+
+### 6.2 平台型（大，只可读结构）
+
+**`calcom/cal.diy`** ★49.7k · MIT（原 cal.com）
+```text
+apps/  packages/  example-apps/  agents/  specs/  deploy/  docs/  scripts/
+.changeset/  .husky/  Dockerfile  Procfile  PERMISSIONS.md
+```
+- **形态**：标准 Turborepo/Alphabet Monorepo —— `apps/` 放可运行应用，`packages/` 放共享包（类型、UI、业务内核），`example-apps/` 演示第三方如何集成，`deploy/` 与 `Dockerfile` 负责交付，`specs/` 把需求写成规格文档。
+- **该抄**：`apps/` 与 `packages/` 的切分粒度 —— 什么该下沉成包、什么必须留在应用里；`PERMISSIONS.md` 这种"权限矩阵落在仓库里"的做法。
+- **别抄**：不要整仓 fork。它的包依赖图极深，你只想要其中 5%，却要背负 100% 的升级成本。
+
+**`twentyhq/twenty`** ★60.5k · AGPLv3 + 商业例外
+```text
+packages/  nx.json  tsconfig.base.json  jest.preset.js  .yarn/
+```
+- **形态**：Nx 管理的 Monorepo，所有代码收在 `packages/`（前端、后端、共享类型、组件库分层）。
+- **该抄**：**渐进替换老 CRM 的双写与灰度思路**，以及"单一 packages 树 + Nx 依赖图"的约束方式。
+- **别抄**：业务代码。AGPL 传染，闭源二开等于自找律师函。
+
+**`langgenius/dify`** ★160.5k · 修改版 Apache-2.0
+```text
+api/  web/  packages/  sdks/  docker/  cli/  e2e/  dify-agent/  dify-agent-runtime/  skills/  docs/
+```
+- **形态**：最典型的"Python 后端 + Next.js 前端 + 多语言 SDK"平台结构 —— `api/` 是业务与编排内核，`web/` 是控制台，`packages/` 与 `sdks/` 对外供集成，`docker/` 是私有化交付形态，`dify-agent/` 与 `dify-agent-runtime/` 把智能体运行时单独拆出。
+- **该抄**：**把 Agent 运行时从 Web 应用里拆出去**这一刀 —— 这正是老单体做 AI 化时最该学的 Sidecar 边界。
+- **别抄**：整平台照搬。160k 星背后是几百人年的功能堆叠，你要的通常只是"工作流 + 知识库"那两块。
+
+**`infiniflow/ragflow`** ★93.6k · Apache-2.0
+```text
+cmd/  internal/  web/  sdk/  conf/  docker/  deps/  tools/  test/  example/
+```
+- **形态**：Go 后端的分层范式 —— `cmd/` 只放入口（main），`internal/` 收全部业务实现（外部不可 import），`web/` 前端，`conf/` 配置，`deps/` 第三方依赖治理。
+- **该抄**：**`cmd/` 与 `internal/` 的严格分界**，这是让后端可长期维护的最低成本手段；RAG 链路的模块切分（解析 / 切片 / 检索 / 重排）。
+- **别抄**：它的深度文档解析依赖较重（含模型与 OCR 依赖），轻量业务没必要全套引入。
+
+### 6.3 产品型（学习"怎么把一件事做完"）
+
+**`vercel/chatbot`** ★21.0k · Apache-2.0
+```text
+app/  components/  hooks/  lib/  artifacts/  tests/  drizzle.config.ts  instrumentation.ts
+```
+- **形态**：Next.js 对话产品的完整闭环 —— 路由与流式接口（`app/`）、聊天 UI 组件（`components/`）、自写 hooks（`hooks/`）、AI 调用与数据层（`lib/`）、`artifacts/` 存生成物、`instrumentation.ts` 做可观测埋点。
+- **该抄**：**流式响应 + 会话持久化 + 产物存对象存储**这条完整链路，以及 `hooks/` 与 `lib/` 的职责切分（前端状态 vs 模型调用）。
+- **别抄**：它的存储与模型绑定默认偏 Vercel 生态，迁到自建环境要改一层适配。
+
+**`polarsource/polar`** ★10.5k · Apache-2.0
+```text
+server/  clients/  infra/  terraform/  lambda/  sdk/  dev/  docs/  handbook/
+```
+- **形态**：商业化计费产品的分层 —— `server/`（Python 后端）、`clients/`（多端前端）、`infra/` + `terraform/`（基础设施即代码）、`lambda/`（事件与回调的无服务器处理）、`sdk/`（对外集成）、`handbook/`（内部运营手册）。
+- **该抄**：**计费领域模型的拆法**（产品 / 价格 / 订阅 / 权益 / 发票 各自独立），以及"基础设施进仓库"的做法。
+- **别抄**：别把它的多层 IaC 用在 MVP 阶段 —— 单机 Docker 就够跑很久。
+
+**`crewAIInc/crewAI`** ★60.5k · MIT
+```text
+lib/  docs/  scripts/  pyproject.toml  uv.lock
+```
+- **形态**：Python 单包工程（`lib/` 下多子包，如核心与工具集），uv 管依赖，`docs/` 与 `scripts/` 支撑开发。
+- **该抄**：**角色 / 任务 / 流程三件套的抽象方式** —— 与本项目的"三大军团 12 角色"几乎同构，可直接对照改造。
+- **别抄**：默认的无限轮对话与工具重试，必须自己加步数上限与成本熔断。
+
+**`livekit/agents`** ★15.1k · Apache-2.0
+```text
+livekit-agents/  livekit-plugins/  examples/  tests/
+```
+- **形态**：核心框架（`livekit-agents/`）与插件（`livekit-plugins/`）彻底分离 —— 每家模型/语音服务各一个插件包，`examples/` 提供可直接跑的范式。
+- **该抄**：**"核心 + 插件"的解耦**，这是多模型供应商时代唯一能算得过账的架构；`examples/` 当启动模板用。
+- **别抄**：插件全装。按需装 1~2 个，否则镜像体积和冷启动会把成本吃掉。
+
+### 6.4 通用方法：10 分钟读透任意一个仓库
+
+```bash
+# 只看顶层，不 clone、不读源码
+curl -s "https://api.github.com/repos/{owner}/{repo}/contents/" | \
+  python3 -c "import sys,json;[print(x['type'][0].upper(), x['name']) for x in json.load(sys.stdin)]"
+```
+
+1. **认形态**：顶层出现 `apps/` + `packages/`（或 `packages/` + `nx.json`/`pnpm-workspace.yaml`）= Monorepo；只有 `app/`、`src/`、`lib/` = 单体应用；只有 `lib/` = 单包库。
+2. **找入口**：`cmd/`、`server/`、`api/`、`app/` 是业务入口，入口越薄越好；入口如果塞满业务逻辑，这个仓库别当基座。
+3. **找契约**：`prisma/`、`migrations/`、`drizzle.config.ts`、`schema/`、`conf/` —— 数据模型在哪，二开边界就在哪。
+4. **找商业化边界**：出现 `ee/`、`proprietary/`、`enterprise/`，说明核心功能可能被切走了，先看许可再谈复用。
+5. **找交付与质量**：`docker/`、`deploy/`、`terraform/`、`.github/workflows/`、`tests/`、`e2e/` —— 没有这些的仓库，等于把上线成本全转嫁给你。
+
+---
+
+## 7. 阶段 3 输出模板：开源底座评估矩阵 (Case Evaluation Matrix)
 
 选型报告里必须包含下表，2~3 个候选（**一主一备**），每行都要有许可结论：
 
