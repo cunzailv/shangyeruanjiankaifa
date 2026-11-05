@@ -7,6 +7,8 @@
 
 这是一个面向创始人、CTO、独立开发者（Indie Hacker）与技术团队打造的高阶“大管家”智能体 Skill。它不负责底层的盲目手写代码，而是化身为你的 **CEO、CFO、CMO、产品总监与首席架构师**，以 **“需求验真先行，商业闭环兜底，开源基座起步，三大军团协同，安全合规并重”** 为核心信条，通过严谨的 **7 阶段商业落地流水线 (Stage Gates)**，帮你把一个模糊的“点子”一步步拆解为可盈利、可落地的敏捷工程工单。
 
+它内置 **38 个已核验的 GitHub 开源案例**（真实 Star 数、真实许可证、真实归档状态），把“找个开源项目抄一下”这种危险动作，变成一张**能直接判断「借哪层、能不能拿去卖」的评估矩阵**。详见 [📦 开源案例库与二开边界清单](references/github-open-source-cases.md)。
+
 ---
 
 ## 💡 为什么需要它？思想演进与底层逻辑 (Background & Rationale)
@@ -46,7 +48,7 @@ flowchart LR
 | **🛡️ 商业战略与风控** | **💰 财务风控官 (CFO)** | 测算单客经济学 ($LTV > 3 \times CAC$)，设计阶梯定价与算力止损线 | 防止算力入不敷出、上线即破产 |
 | | **⚖️ 安全合规官 (CISO)** | 审查 GDPR/CCPA 出海隐私、开源商用许可冲突、配置防 Prompt 注入与接口防刷 | 防止刚上线就被欧洲监管罚款或 Stripe 封停 |
 | | **📋 产品规划师 (PM)** | 细化 ICP 画像、梳理核心 JTBD 场景与低保真原型 (Wireframe) | 防止需求假大空、核心业务交互逻辑断层 |
-| **🛠️ 产研与 AI 工程** | **🔬 开源系统架构师** | 在 GitHub 检索成熟可商用底座，界定二开边界与 ADR 架构决策 | 杜绝从零手搓通用轮子，大幅缩短开发周期 |
+| **🛠️ 产研与 AI 工程** | **🔬 开源系统架构师** | 在 GitHub 检索成熟可商用底座，核验许可证（AGPL/自定义许可/归档），界定二开边界与 ADR 架构决策 | 杜绝从零手搓通用轮子，也杜绝把高星 AGPL 项目当基座卖钱 |
 | | **🧠 AI 工程架构师** | 设计 Agent 协作拓扑、RAG 向量检索优化、通过 Ragas 评测防幻觉 | 防止 API 调用胡言乱语、Token 账单爆表 |
 | | **🎨 UI/UX 规范专家** | 基于 Tailwind + Shadcn 输出设计 Token、组件体系与响应式规约 | 告别粗糙山寨的前端 Demo 界面 |
 | | **💻 全栈特工** | 契约先行 (Schema/API)，在开源基座上实现核心差异化业务 | 拒绝过度工程，产出高质可维护的代码 |
@@ -65,6 +67,7 @@ flowchart LR
 - **🤖 三大专家军团多智能体协同 (Multi-Agent Tri-Pods)**：作为 Orchestrator（统筹者），统控【战略风控】、【产研工程】与【商运增长】三大军团（12 专职角色），智能路由并生成“移交上下文”，打破上下文污染与角色放水，保障工业级商业成功。
 - **🧭 动态项目策略**：自动识别**全新项目 (Greenfield)**、**二次开发/重构 (Brownfield)** 和 **传统项目 AI 化 (AI Transformation)**，提供如“绞杀者模式”、“Sidecar”等差异化架构方案。
 - **💰 商业防破产机制**：在写代码前强制引入“单位经济学 ($LTV > 3 \times CAC$)”测算，建立零出网费对象存储、异步算力队列与防刷量限流护城河。
+- **📦 真实开源案例对标 (Verified Case Library)**：38 个高频使用的 GitHub 仓库逐一核验 **Star / 许可证 / 归档状态**，按「项目类型 → 受众场景 → 产品形态」三张表锁定“借哪一层、自己写哪一层”，并对 **AGPL/GPL 传染、自定义商用限制、已归档仓库** 设三票否决（例如 16.5 万星的 `stable-diffusion-webui` 是 AGPL-3.0、14.5 万星的 `ComfyUI` 是 GPL-3.0，直接并入闭源产品即是事故）。
 
 ---
 
@@ -75,10 +78,28 @@ flowchart LR
 1. **阶段 0**：用户需求先行与价值主张验真（PMF / 痛点定级 / Smoke Test 假门把手）
 2. **阶段 1**：商业模式、变现路径与单位经济学测算（LTV:CAC / 支付网关合规 / 防破产架构）
 3. **阶段 2**：敏捷产品需求文档 (PRD) 与页面交互逻辑（User Story / Wireframe 结构）
-4. **阶段 3**：开源脚手架选型与二次开发规划（黄金技术栈匹配 / 严禁从零手搓轮子）
+4. **阶段 3**：开源脚手架选型与二次开发规划（黄金技术栈匹配 / 真实案例对标 / 许可证合规裁决 / 严禁从零手搓轮子）
 5. **阶段 4**：系统契约、数据模型、合规与设计规范（ER 图 / API 契约 / GDPR 合规）
 6. **阶段 5**：AI 智能体管线与 Prompt 架构设计（Agent 拓扑 / Ragas 评测 / 降级策略）
 7. **阶段 6**：多智能体落地拆解与敏捷验证工单（EPIC -> Task / QA 对抗测试 / DevOps 部署）
+
+---
+
+## 📦 开源案例库速览（节选，完整版见 [references/github-open-source-cases.md](references/github-open-source-cases.md)）
+
+| 你要做的事 | 首选对标案例 | Star | 许可证 | 结论 |
+| :--- | :--- | :--- | :--- | :--- |
+| 搭 SaaS 订阅骨架 | [`nextjs/saas-starter`](https://github.com/nextjs/saas-starter) | 16.2k | MIT | ✅ 可直接作基座 |
+| 抄工程化配置（i18n/鉴权/CI） | [`ixartz/Next-js-Boilerplate`](https://github.com/ixartz/Next-js-Boilerplate) | 13.1k | MIT | ✅ 可直接作基座 |
+| AI 对话产品骨架 | [`vercel/chatbot`](https://github.com/vercel/chatbot) | 21.0k | Apache-2.0 | ✅ 商用友好 |
+| 学 Monorepo / 绞杀者改造 | [`calcom/cal.diy`](https://github.com/calcom/cal.diy)（原 cal.com） | 49.7k | MIT | ✅ 可借结构 |
+| 私有化 RAG 知识库 | [`infiniflow/ragflow`](https://github.com/infiniflow/ragflow) | 93.6k | Apache-2.0 | ✅ 可私有化部署 |
+| 订阅计费 / 权益 / 发票 | [`polarsource/polar`](https://github.com/polarsource/polar) | 10.5k | Apache-2.0 | ✅ 可作计费中台 |
+| 生图后端 | [`Comfy-Org/ComfyUI`](https://github.com/Comfy-Org/ComfyUI) | 145.2k | GPL-3.0 | ⚠️ 只能独立进程调用 |
+| 签署/合同类业务 | [`documenso/documenso`](https://github.com/documenso/documenso) | 15.7k | AGPL-3.0 | ❌ 只能读，不可闭源二开 |
+| 官方订阅模板 | [`vercel/nextjs-subscription-payments`](https://github.com/vercel/nextjs-subscription-payments) | 7.7k | MIT | ❌ 2025-01 已归档，不可作基座 |
+
+> 数据抓取自 GitHub API，截至 **2026-11-05**；复用时请复核，Star 数不等于可商用。
 
 ---
 
@@ -107,6 +128,7 @@ flowchart LR
 │   ├── design-styles.md          # UI 视觉风格与前端代码映射字典
 │   ├── economics-formulas.md     # 商业变现与单位经济学公式
 │   ├── feature-modules.md        # 常见 SaaS/AI 工具功能积木库
+│   ├── github-open-source-cases.md # 38 个已验证开源案例 + 许可证红线 + 二开边界
 │   ├── project-type-strategies.md# 不同类型项目的差异化分析策略
 │   └── tech-stack-matrix.md      # 黄金技术栈与平滑演进架构指南
 └── scripts/                 # ⚙️ 自动化构建脚本
@@ -122,6 +144,7 @@ flowchart LR
 | **思想演进全纪实与实施总则** | [docs/ai_development_evolution_and_rationale.md](docs/ai_development_evolution_and_rationale.md) | 深度剖析 AI 研发痛点根源、多智能体破局、商业需求终局与资产沉淀全景 |
 | **商业闭环与研发实战手册** | [docs/ai_engineering_playbook.md](docs/ai_engineering_playbook.md) | 涵盖 JTBD 验真自检、防破产算力架构、六大黄金栈与 Master Prompt |
 | **多模态架构与技术选型报告** | [docs/tech_stack_architecture_report.md](docs/tech_stack_architecture_report.md) | 六大多模态赛道（写作/出图/写歌/播客/视频/伴侣）工业级选型矩阵 |
+| **开源案例库与二开边界清单** | [references/github-open-source-cases.md](references/github-open-source-cases.md) | 38 个仓库的 Star/许可证/活跃度核验，按项目类型、受众场景、产品形态三表选型，附三票否决清单与评估矩阵模板 |
 
 ---
 
