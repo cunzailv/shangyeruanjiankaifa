@@ -251,7 +251,7 @@ dsh plugin --profile web add github:cunzailv/shangyeruanjiankaifa
 dsh plugin --profile web add link:/绝对路径/到本仓库
 ```
 
-> 目前尚未发布到 npm。npm 上同名的 `dsh-project-planner` 与本项目无关，注意别装错。
+> 目前尚未发布到 npm（本项目包名为 `dsh-business-planner`）。npm 上另有一个 `dsh-project-planner` 与本项目无关，注意别装错。
 
 ### 唤醒大管家
 
