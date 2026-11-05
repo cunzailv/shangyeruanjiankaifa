@@ -1,8 +1,9 @@
 # 阶段 0：用户需求验真与商业价值主张书 (Stage 0 Report)
 
-## 1. 项目类型与现状诊断 (Project Type & Current Status)
+## 1. 项目定位与现状诊断 (Project Type & Current Status)
 
 *   **项目类型**：[全新项目 (Greenfield) / 二次开发与重构 (Brownfield) / 传统项目 AI 化 (AI Transformation)]
+*   **目标受众/使用场景**：[仅个人使用 / 个人先用后续转商业化 / 内部团队企业使用 / 纯商业化发布]
 *   **当前痛点/动机 (针对非全新项目)**：[为什么要改？如“老代码难以维护导致新需求无法上线”、“人工客服成本太高需要接入 AI Agent”]
 *   **历史债务与限制 (Technical Debt & Constraints)**：[如“前端还是 Vue 2，后端是老旧的 PHP 单体，数据库结构不能动”]
 
