@@ -1,0 +1,16 @@
+# ============================================================================
+# dsh-business-planner —— DSH bundle patch（插件自带的挂载声明）
+# ============================================================================
+# 安装本插件后，profile 只需要在 dsh.profile.bundles 里列出本包名即可生效，
+# 不用手改 profile 自己的 cordis.patch.yml：
+#
+#   dsh plugin --profile web add link:<这个仓库的绝对路径>
+#
+# 插件只做一件事：读取同目录的 SKILL.md，把 project-development-planner
+# 注册进 DSH 的技能目录；references/ 与 assets/ 通过 resourceBase 作为相对
+# 路径解析，模型按阶段按需读取。
+# ============================================================================
+
+- insert:
+    - id: project-planner
+      name: dsh-business-planner

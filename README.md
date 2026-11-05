@@ -1,6 +1,7 @@
 # 💼 商业软件开发大管家 (Project Development Planner)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![DSH Plugin](https://img.shields.io/badge/DSH-Plugin-6C5CE7.svg)](#-安装与快速开始)
 [![GitHub stars](https://img.shields.io/github/stars/cunzailv/shangyeruanjiankaifa?style=social)](https://github.com/cunzailv/shangyeruanjiankaifa)
 
 > **“按部就班的研发流程只是执行手段。如果不把【用户需求先行】和【商业闭环】放在最前头，用最顶级的架构写出来的也只是无人买单的自嗨废品。”**
@@ -8,6 +9,8 @@
 这是一个面向创始人、CTO、独立开发者（Indie Hacker）与技术团队打造的高阶“大管家”智能体 Skill。它不负责底层的盲目手写代码，而是化身为你的 **CEO、CFO、CMO、产品总监与首席架构师**，以 **“需求验真先行，商业闭环兜底，开源基座起步，三大军团协同，安全合规并重”** 为核心信条，通过严谨的 **7 阶段商业落地流水线 (Stage Gates)**，帮你把一个模糊的“点子”一步步拆解为可盈利、可落地的敏捷工程工单。
 
 它内置 **38 个已核验的 GitHub 开源案例**（真实 Star 数、真实许可证、真实归档状态），把“找个开源项目抄一下”这种危险动作，变成一张**能直接判断「借哪层、能不能拿去卖」的评估矩阵**。详见 [📦 开源案例库与二开边界清单](references/github-open-source-cases.md)。
+
+> **🧩 已提供 DSH 插件**：装进 DeepSeek Harness 后，在对话框输入 `/project-development-planner` 就能唤醒大管家，`references/` 与 `assets/` 随包生效、无需复制文件。装法见 [安装与快速开始](#-安装与快速开始)。
 
 ---
 
@@ -186,6 +189,11 @@ flowchart LR
 .
 ├── LICENSE                  # ⚖️ 开源协议：MIT License
 ├── SKILL.md                 # 🧠 主控大脑：定义 Agent 的行为准则、交互模式与 7 大阶段卡点
+├── package.json             # 🧩 DSH 插件清单（dsh.bundle.patch 指向挂载声明）
+├── index.js                 # 🧩 DSH 插件入口：把 SKILL.md 注册成 DSH 技能
+├── cordis.patch.yml         # 🧩 DSH bundle patch：安装后自动挂载插件行
+├── icon.svg                 # 🧩 插件图标（DSH Plugins 页展示）
+├── test/smoke.mjs           # 🧪 插件冒烟测试（node test/smoke.mjs）
 ├── docs/                    # 📚 深度演进纪实、实战工程手册与架构报告
 │   ├── ai_development_evolution_and_rationale.md # 思想演进全纪实与实施总则（白皮书）
 │   ├── ai_engineering_playbook.md                # 商业闭环与多智能体实战手册
@@ -222,6 +230,43 @@ flowchart LR
 | **商业闭环与研发实战手册** | [docs/ai_engineering_playbook.md](docs/ai_engineering_playbook.md) | 涵盖 JTBD 验真自检、防破产算力架构、六大黄金栈与 Master Prompt |
 | **多模态架构与技术选型报告** | [docs/tech_stack_architecture_report.md](docs/tech_stack_architecture_report.md) | 六大多模态赛道（写作/出图/写歌/播客/视频/伴侣）工业级选型矩阵 |
 | **开源案例库与二开边界清单** | [references/github-open-source-cases.md](references/github-open-source-cases.md) | 38 个仓库的 Star/许可证/活跃度核验，按项目类型、受众场景、产品形态三表选型，附三票否决清单与评估矩阵模板 |
+
+---
+
+## 🚀 安装与快速开始
+
+本仓库既是 Skill，也是一个标准 **DSH 插件包**（`dsh-business-planner`）。装进 profile 后，`project-development-planner` 会直接出现在技能目录里；`references/` 与 `assets/` 由插件的 `resourceBase` 指向包根目录，模型按阶段按需读取，**不需要往工作区复制任何文件**。
+
+### 方式一：DSH 桌面版（推荐）
+
+打开 **Plugins** 页 → 安装本地插件 → 选择本仓库目录（或粘贴仓库地址）。装完**新开一个会话**即可使用。
+
+### 方式二：DSH CLI
+
+```bash
+# 从 GitHub 直接安装
+dsh plugin --profile web add github:cunzailv/shangyeruanjiankaifa
+
+# 本地开发：link 到仓库目录，改 SKILL.md / 代码后重新加载即可生效
+dsh plugin --profile web add link:/绝对路径/到本仓库
+```
+
+> 目前尚未发布到 npm。npm 上同名的 `dsh-project-planner` 与本项目无关，注意别装错。
+
+### 唤醒大管家
+
+```text
+/project-development-planner 我想做一个……
+```
+
+装完后在 `/` 列表里能看到 `project-development-planner`；模型的描述匹配也会自动挂载它。
+
+### 使用小贴士
+
+- 本地 `link:` 安装指向仓库目录，移动或删除目录后插件会失效。
+- 改 `SKILL.md` 后需重启 DSH 或重新加载插件（正文在插件加载时读取）。
+- 只想验证插件包本身：`npm test`（不启动 DSH）。
+- 其它 IDE / 通用大模型用法见文末 [跨平台使用指南](#-跨平台使用指南-how-to-use)。
 
 ---
 

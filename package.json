@@ -1,0 +1,42 @@
+{
+  "name": "dsh-business-planner",
+  "version": "0.1.0",
+  "description": "DSH 插件：把「商业级全流程项目开发规划」7 阶段大管家装进 DSH，装完即可 /project-development-planner 调用",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "skill",
+    "project-planning",
+    "saas"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "SKILL.md",
+    "README.md",
+    "LICENSE",
+    "references",
+    "assets"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  }
+}
