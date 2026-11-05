@@ -11,7 +11,7 @@
 
 它内置 **38 个已核验的 GitHub 开源案例**（真实 Star 数、真实许可证、真实归档状态），把“找个开源项目抄一下”这种危险动作，变成一张**能直接判断「借哪层、能不能拿去卖」的评估矩阵**。详见 [📦 开源案例库与二开边界清单](references/github-open-source-cases.md)。
 
-> **🧩 已提供 DSH 插件**：装进 DeepSeek Harness 后，在对话框输入 `/project-development-planner` 就能唤醒大管家，`references/` 与 `assets/` 随包生效、无需复制文件。装法见 [安装与快速开始](#-安装与快速开始)。
+> **🧩 已提供 DSH 插件**：装进 DeepSeek Harness 后，左侧栏会多一个「规划大管家」入口 —— 7 阶段进度、卡点产出、参考文档与启动指令一屏可查；对话框里输入 `/project-development-planner` 也能直接唤醒。装法见 [安装与快速开始](#-安装与快速开始)。
 
 ---
 
@@ -67,6 +67,7 @@ flowchart LR
 
 ## ✨ 核心特性
 
+- **🧭 左侧栏工作台 (DSH Panel)**：插件在 DSH 左侧栏注册「规划大管家」入口，7 阶段进度、每阶段卡点产出与参考文档、一键复制启动指令；进度存在本机 localStorage，不污染仓库。
 - **🔘 选择题驱动 (Choice-Driven)**：人类不擅长填空题，但擅长做选择。内置《设计风格字典》与《功能积木库》，直接提供 Plan A / Plan B 供你权衡抉择。
 - **🤖 三大专家军团多智能体协同 (Multi-Agent Tri-Pods)**：作为 Orchestrator（统筹者），统控【战略风控】、【产研工程】与【商运增长】三大军团（12 专职角色），智能路由并生成“移交上下文”，打破上下文污染与角色放水，保障工业级商业成功。
 - **🧭 动态项目策略**：自动识别**全新项目 (Greenfield)**、**二次开发/重构 (Brownfield)** 和 **传统项目 AI 化 (AI Transformation)**，提供如“绞杀者模式”、“Sidecar”等差异化架构方案。
@@ -191,7 +192,8 @@ flowchart LR
 ├── LICENSE                  # ⚖️ 开源协议：MIT License
 ├── SKILL.md                 # 🧠 主控大脑：定义 Agent 的行为准则、交互模式与 7 大阶段卡点
 ├── package.json             # 🧩 DSH 插件清单（dsh.bundle.patch 指向挂载声明）
-├── index.js                 # 🧩 DSH 插件入口：把 SKILL.md 注册成 DSH 技能
+├── index.js                 # 🧩 DSH 宿主入口：把 SKILL.md 注册成 DSH 技能
+├── client.js                # 🧩 DSH 客户端入口：左侧栏「规划大管家」入口 + 7 阶段面板
 ├── cordis.patch.yml         # 🧩 DSH bundle patch：安装后自动挂载插件行
 ├── icon.svg                 # 🧩 插件图标（DSH Plugins 页展示）
 ├── test/smoke.mjs           # 🧪 插件冒烟测试（node test/smoke.mjs）
@@ -236,7 +238,10 @@ flowchart LR
 
 ## 🚀 安装与快速开始
 
-本仓库既是 Skill，也是一个标准 **DSH 插件包**（`dsh-business-planner`）。装进 profile 后，`project-development-planner` 会直接出现在技能目录里；`references/` 与 `assets/` 由插件的 `resourceBase` 指向包根目录，模型按阶段按需读取，**不需要往工作区复制任何文件**。
+本仓库既是 Skill，也是一个标准 **DSH 插件包**（`dsh-business-planner`），包含宿主与浏览器两半：
+
+- **宿主**：把 `project-development-planner` 注册进技能目录，`references/` 与 `assets/` 由 `resourceBase` 指向包根目录，模型按阶段按需读取，**不需要往工作区复制任何文件**。
+- **客户端**：在左侧栏注册「规划大管家」入口，点开是 7 阶段工作台（进度勾选、卡点产出、自查三问、参考文档、复制启动指令），进度存在本机 localStorage。
 
 ### 方式一：DSH 桌面版（推荐）
 

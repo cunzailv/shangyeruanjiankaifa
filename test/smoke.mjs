@@ -3,7 +3,7 @@
  * 跑法：node test/smoke.mjs（或 npm test）
  */
 import assert from 'node:assert/strict'
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -42,6 +42,13 @@ assert.ok(referenced.length > 0, '正文没有引用任何资源？')
 for (const relative of new Set(referenced)) {
   assert.ok(existsSync(join(packageDir, relative)), `正文引用了不存在的资源：${relative}`)
 }
+
+// 客户端半端：左侧栏入口 + main 面板必须成对出现，否则会点开空白。
+const client = readFileSync(join(packageDir, 'client.js'), 'utf8')
+assert.match(client, /__ModuleLoader__\.load\(/, 'client.js 必须是自注册 bundle')
+assert.match(client, /name:\s*'sidebar\.panellist'/, '缺少左侧栏入口 (sidebar.panellist)')
+assert.match(client, /name:\s*'main'/, '缺少主面板 (main)')
+assert.match(client, /id:\s*PANEL_ID/, '侧栏与主面板 id 必须共用同一个常量')
 
 console.log(`✅ 插件冒烟测试通过：${skill.name}`)
 console.log(`   资源基准：${skill.resourceBase.path}`)
