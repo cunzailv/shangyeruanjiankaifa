@@ -233,6 +233,9 @@ flowchart LR
 │   ├── stage-0-template.md  # 需求验真报告模板
 │   ├── stage-1-template.md  # 商业测算报告模板
 │   └── prd-template.md      # 标准 PRD 与低保真原型模板
+├── projects/                # 🧪 实战示例：拿真实产品把体系完整跑一遍
+│   └── job-match-tool/
+│       └── growth-plan.md   # 四层增长总案（LTV/CAC 推算 + 三条渠道 CPA 推演 + 90 天排期）
 ├── references/              # 📖 知识库：供 AI 随时查阅的专业字典
 │   ├── agent-skill-routing.md    # 12 角色多智能体协同路由表
 │   ├── design-styles.md          # UI 视觉风格与前端代码映射字典
@@ -257,6 +260,7 @@ flowchart LR
 | **多模态架构与技术选型报告** | [docs/tech_stack_architecture_report.md](docs/tech_stack_architecture_report.md) | 六大多模态赛道（写作/出图/写歌/播客/视频/伴侣）工业级选型矩阵 |
 | **开源案例库与二开边界清单** | [references/github-open-source-cases.md](references/github-open-source-cases.md) | 38 个仓库的 Star/许可证/活跃度核验，按项目类型、受众场景、产品形态三表选型，附三票否决清单与评估矩阵模板 |
 | **四层增长体系手册** | [references/growth-marketing-playbook.md](references/growth-marketing-playbook.md) | 营销管全局 / 策划出主意 / 推广造声量 / 投放买曝光：定位四件套、Big Idea 四检验、15 秒素材脚本、19 渠道斗牛犬、24 条素材矩阵、CPA·ROAS 止损、按层指标字典、6 组案例 + 11 个开源基建 |
+| **四层增长总案实战示例** | [projects/job-match-tool/growth-plan.md](projects/job-match-tool/growth-plan.md) | 用 JD-简历匹配工具跑完四层：LTV ¥79 → CAC 上限 ¥26 → 三条渠道 CPA 推演（¥114~298，全部 4~11 倍超标）→ 结论"不获客投放"，附 12 条选题、2 条脚本、90 天排期与决策线 |
 
 ---
 

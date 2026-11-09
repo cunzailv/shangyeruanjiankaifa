@@ -42,7 +42,7 @@ description: 商业级全流程项目开发规划专家。作为总控大管家(
 - **核心任务**：确定 GTM 策略、支付合规、测算 LTV:CAC 与 ROI，规划防破产架构，并给出**可执行的获客预算与止损线**。
 - **操作指令**：
   1. 必须读取 `references/economics-formulas.md` 获取标准财务计算公式。
-  2. 必须读取 `references/growth-marketing-playbook.md` 第 0~2 节（四层体系 / 营销 / 策划），把「营销定盘 → 策划出弹」落成数字：**目标 CAC / 最低 ROAS / 回本周期 / 主渠道假设**，并与 LTV:CAC 结论互相校验。
+  2. 必须读取 `references/growth-marketing-playbook.md` 第 0~2 节（四层体系 / 营销 / 策划），把「营销定盘 → 策划出弹」落成数字：**目标 CAC / 最低 ROAS / 回本周期 / 主渠道假设**，并与 LTV:CAC 结论互相校验；算法范本（LTV → CAC 上限 → 渠道 CPA 推演 → 投放是否成立）见 `projects/job-match-tool/growth-plan.md`。
   3. 根据公式进行测算，并按照 `assets/stage-1-template.md` 模板输出报告。
 > **卡点产出**：《单位经济学测算、定价阶梯、GTM 预算与防破产架构报告》（暂停，等待用户确认）。
 
