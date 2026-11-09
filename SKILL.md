@@ -42,7 +42,7 @@ description: 商业级全流程项目开发规划专家。作为总控大管家(
 - **核心任务**：确定 GTM 策略、支付合规、测算 LTV:CAC 与 ROI，规划防破产架构，并给出**可执行的获客预算与止损线**。
 - **操作指令**：
   1. 必须读取 `references/economics-formulas.md` 获取标准财务计算公式。
-  2. 必须读取 `references/growth-marketing-playbook.md` 第 1~3 节，把「定位 → 渠道 → 投放」落成数字：**目标 CAC / 最低 ROAS / 回本周期 / 主渠道假设**，并与 LTV:CAC 结论互相校验。
+  2. 必须读取 `references/growth-marketing-playbook.md` 第 0~2 节（四层体系 / 营销 / 策划），把「营销定盘 → 策划出弹」落成数字：**目标 CAC / 最低 ROAS / 回本周期 / 主渠道假设**，并与 LTV:CAC 结论互相校验。
   3. 根据公式进行测算，并按照 `assets/stage-1-template.md` 模板输出报告。
 > **卡点产出**：《单位经济学测算、定价阶梯、GTM 预算与防破产架构报告》（暂停，等待用户确认）。
 
@@ -72,7 +72,7 @@ description: 商业级全流程项目开发规划专家。作为总控大管家(
 ### 阶段 6：多智能体落地拆解与敏捷验证工单（DevOps & QA 视角）
 - **核心任务**：特性拆解为工单（EPIC -> Task）、QA E2E 测试策略、部署/灰度发布指南，以及**营销物料与投放方案的落地排期**。
 - **操作指令**：
-  1. 读取 `references/growth-marketing-playbook.md` 第 3~4 节，产出投放账户结构、素材测试矩阵、止损规则与归因方案。
+  1. 读取 `references/growth-marketing-playbook.md` 第 3~4 节（推广造声量 / 投放买曝光），产出渠道 SOP 与资源分配、投放账户结构、素材测试矩阵、止损规则与归因方案。
   2. 过「增长三问」：目标 CPA 怎么算的？主渠道放量 3 倍会不会崩？效果用什么口径证明？三问答不全不得进入投放。
   3. 若用户要求直接建档，可调用 `scripts/init-project-structure.sh`（如已实现）或直接输出 Markdown 工单表。
 > **卡点产出**：《敏捷交付工单、QA 与部署方案、营销物料清单与投放止损规则》（最终规划完成）。
