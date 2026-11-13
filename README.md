@@ -74,7 +74,7 @@ flowchart LR
 - **💰 商业防破产机制**：在写代码前强制引入“单位经济学 ($LTV > 3 \times CAC$)”测算，建立零出网费对象存储、异步算力队列与防刷量限流护城河。
 - **📦 真实开源案例对标 (Verified Case Library)**：38 个高频使用的 GitHub 仓库逐一核验 **Star / 许可证 / 归档状态**，按「项目类型 → 受众场景 → 产品形态」三张表锁定“借哪一层、自己写哪一层”，并对 **AGPL/GPL 传染、自定义商用限制、已归档仓库** 设三票否决（例如 16.5 万星的 `stable-diffusion-webui` 是 AGPL-3.0、14.5 万星的 `ComfyUI` 是 GPL-3.0，直接并入闭源产品即是事故）。
 - **📣 四层增长体系：营销 / 策划 / 推广 / 投放 (Four-Layer Growth)**：把混成一团的"营销"拆成四个有边界、有 KPI 的层 —— **营销管全局**（定位/定价/增长模型/预算配比）→ **策划出主意**（Big Idea / Brief / 内容与素材脚本）→ **推广造声量**（19 渠道斗牛犬筛选、社区/目录站/SEO）→ **投放买曝光**（三条线、24 条素材矩阵、止损与归因）。每层配"失灵症状"与拒收标准，并附 11 个**可自建的增长基建开源案例**与 6 组打法案例。
-- **💰 变现模式库与副业单位经济 (Monetization Models)**：把"我该做什么赚钱"拆成 **10 类可对照的变现模型**（订阅工具 / B 端 SaaS / API-SDK / 代码资产 / 知识社群 / 流量联盟 / 技术服务 / 电商跨境 / 本地服务 / 内容 IP），每类给出启动成本、客单、毛利、**回本条件**与获客主路径；附 24 条来自真实方案的**参数区间**、6 个 0 预算冷启动招式，以及一张**灰产与资质红线判定表**（论文代写、视频搬运、账号发卡、无牌照荐股等一律不做）。
+- **💰 变现模式库与副业单位经济 (Monetization Models)**：把"我该做什么赚钱"拆成 **10 类可对照的变现模型**（订阅工具 / B 端 SaaS / API-SDK / 代码资产 / 知识社群 / 流量联盟 / 技术服务 / 电商跨境 / 本地服务 / 内容 IP），每类给出启动成本、客单、毛利、**回本条件**与获客主路径，并配上 **26 个已核验 GitHub 底座**（Star / 许可 / 归档状态逐一核过，含 BSL、AGPL、GPL 的商用禁区）；另附 24 条来自真实方案的**参数区间**、6 个 0 预算冷启动招式，以及一张**灰产与资质红线判定表**（论文代写、视频搬运、账号发卡、无牌照荐股等一律不做）。
 
 ---
 
@@ -244,7 +244,7 @@ flowchart LR
 │   ├── feature-modules.md        # 常见 SaaS/AI 工具功能积木库
 │   ├── github-open-source-cases.md # 38 个已验证开源案例 + 许可证红线 + 二开边界
 │   ├── growth-marketing-playbook.md # 四层增长体系：营销管全局 / 策划出主意 / 推广造声量 / 投放买曝光
-│   ├── monetization-models.md    # 十类变现模型 + 参数库 + 冷启动招式 + 灰产红线
+│   ├── monetization-models.md    # 十类变现模型 + 参数库 + 26 个已核验开源底座 + 灰产红线
 │   ├── project-type-strategies.md# 不同类型项目的差异化分析策略
 │   └── tech-stack-matrix.md      # 黄金技术栈与平滑演进架构指南
 └── scripts/                 # ⚙️ 自动化构建脚本
@@ -263,7 +263,7 @@ flowchart LR
 | **开源案例库与二开边界清单** | [references/github-open-source-cases.md](references/github-open-source-cases.md) | 38 个仓库的 Star/许可证/活跃度核验，按项目类型、受众场景、产品形态三表选型，附三票否决清单与评估矩阵模板 |
 | **四层增长体系手册** | [references/growth-marketing-playbook.md](references/growth-marketing-playbook.md) | 营销管全局 / 策划出主意 / 推广造声量 / 投放买曝光：定位四件套、Big Idea 四检验、15 秒素材脚本、19 渠道斗牛犬、24 条素材矩阵、CPA·ROAS 止损、按层指标字典、6 组案例 + 11 个开源基建 |
 | **四层增长总案实战示例** | [projects/job-match-tool/growth-plan.md](projects/job-match-tool/growth-plan.md) | 用 JD-简历匹配工具跑完四层：LTV ¥79 → CAC 上限 ¥26 → 三条渠道 CPA 推演（¥114~298，全部 4~11 倍超标）→ 结论"不获客投放"，附 12 条选题、2 条脚本、90 天排期与决策线 |
-| **变现模式库与副业单位经济** | [references/monetization-models.md](references/monetization-models.md) | 10 类变现模型的可比参数（启动成本/客单/毛利/回本条件）、24 条样本区间、6 个 0 预算冷启动招式、PMF 信号与虚荣指标鉴别、灰产与资质红线判定表 |
+| **变现模式库与副业单位经济** | [references/monetization-models.md](references/monetization-models.md) | 10 类变现模型的可比参数（启动成本/客单/毛利/回本条件）、**26 个已核验开源底座**（按模型配对 + 许可风险清单）、24 条样本区间、6 个 0 预算冷启动招式、PMF 信号与虚荣指标鉴别、灰产与资质红线判定表 |
 
 ---
 

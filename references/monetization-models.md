@@ -33,6 +33,8 @@
 
 **怎么选**：先看"你已有的资产"（技术/行业认知/流量/供应链），再看"回本条件"能不能在 6 个月内达成，最后才看市场规模。**模型选错，功能做得再对也赚不到钱。**
 
+> 每一类模型的"能用什么开源底座起步"，见 §7（已核验 Star / 许可 / 归档状态）。
+
 ---
 
 ## 2. 参数库：可直接带进阶段 1 测算的样本
@@ -141,13 +143,63 @@
 | **阶段 0 验真** | ① 十类模型里先圈定 1–2 个候选；② 做 10–20 个精准用户对话；③ 用"假门把手/预售"测付费意愿；④ 扒竞品差评找空白 | 《需求验真报告》含"模型候选 + 付费证据" |
 | **阶段 1 测算** | 用 §2 参数库带入自己的数字，算回本用户数、CAC 上限、跑道；用 §4.2 检查"能不能活" | 《单位经济测算》含 LTV/CAC、回本周期、Runway |
 | **阶段 2 PRD** | 按选定模型裁剪功能：订阅工具先做"一个高频动作"，B 端 SaaS 先做"一条流程闭环" | PRD 的 MVP 边界 |
+| **阶段 3 开源选型** | 按 §7 找同类模型的可商用底座，先过"许可/归档/近 6 个月提交"三条判据 | 技术选型表 + 许可结论 |
 | **阶段 6 冷启动** | 从 §3 选 1–2 个招式，配 2 周判定线 | 冷启动 SOP + 止损线 |
 
 **一条硬规则**：阶段 1 若算不出"回本用户数"或"Runway < 6 个月"，不允许进入开发。
 
 ---
 
-## 7. 章节索引（要回溯原文时按这个查）
+## 7. 十类模型的开源底座（2026-11 已核验）
+
+数据取自 GitHub REST API 四字段（`stargazers_count` / `license.spdx_id` / `archived` / `pushed_at`），不是凭记忆。**已有底座**（[medusajs/medusa](https://github.com/medusajs/medusa)、[calcom/cal.diy](https://github.com/calcom/cal.diy)、[dubinc/dub.link](https://github.com/dubinc/dub.link)、`posthog`、[polarsource/polar](https://github.com/polarsource/polar)、[nextjs/saas-starter](https://github.com/nextjs/saas-starter)）见 `github-open-source-cases.md`，此处不重复。
+
+| 变现模型 | ✅ 可商用底座（许可） | 怎么用 / 边界 |
+| :--- | :--- | :--- |
+| **1 订阅制小工具** | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) ★128.1k MIT<br>[killbill/killbill](https://github.com/killbill/killbill) ★5.9k Apache-2.0 | 前者是 UI 与组件底座；后者是订阅计费引擎（套餐/试用/按量/催缴），省掉自己写账期的坑 |
+| **2 垂直 B 端 SaaS** | [usememos/memos](https://github.com/usememos/memos) ★64.4k MIT<br>[docmost/docmost](https://github.com/docmost/docmost) ★22.3k ⚠️AGPL | memos 可闭源二开做轻协作；docmost 只借交互与权限设计，**别直接商用** |
+| **3 API / SDK** | [Kong/kong](https://github.com/Kong/kong) ★44.4k Apache-2.0<br>[apache/apisix](https://github.com/apache/apisix) ★17.3k Apache-2.0<br>[Portkey-AI/gateway](https://github.com/Portkey-AI/gateway) ★13.4k MIT<br>[hoppscotch/hoppscotch](https://github.com/hoppscotch/hoppscotch) ★80.8k MIT | 前两个做鉴权/限流/计量（按量计费的前置）；Portkey 做多模型路由与护栏；Hoppscotch 是"开发者工具 + 云端协作"的产品形态参照 |
+| **4 代码资产 / 模板授权** | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) ★128.1k MIT<br>[sanity-io/sanity](https://github.com/sanity-io/sanity) ★6.4k MIT | **registry 模式**（复制即拥有）正是卖组件包/模板的现代形态；sanity 提供结构化内容模板 |
+| **5 知识付费 / 社群** | [TryGhost/Ghost](https://github.com/TryGhost/Ghost) ★55.8k MIT<br>[flarum/flarum](https://github.com/flarum/flarum) ★16.4k MIT | Ghost 自带 memberships + 订阅 + 邮件，是**一个人做付费内容的最短路径**；Flarum 轻社区可闭源 |
+| **6 流量 / 联盟** | [gohugoio/hugo](https://github.com/gohugoio/hugo) ★90.5k Apache-2.0<br>[withastro/astro](https://github.com/withastro/astro) ★64.0k MIT<br>[facebook/docusaurus](https://github.com/meta/docusaurus) ★66.7k MIT（已改名 meta/docusaurus） | 内容站/文档站三件套：先做 SEO 资产（长尾词、比价、评测），再挂联盟链接与软广位 |
+| **7 技术服务履约** | [docmost/docmost](https://github.com/docmost/docmost) ★22.3k ⚠️AGPL<br>[alextselegidis/easyappointments](https://github.com/alextselegidis/easyappointments) ★4.5k ⚠️GPL-3.0 | 交付文档/排期可借壳自用；**对外卖服务时不要打包这两个** |
+| **8 电商 / 跨境** | [saleor/saleor](https://github.com/saleor/saleor) ★23.6k BSD-3<br>[bagisto/bagisto](https://github.com/bagisto/bagisto) ★28.4k MIT<br>[Shopify/hydrogen](https://github.com/Shopify/hydrogen) ★2.2k MIT | Saleor 做 headless 多店；Bagisto 自带多商户 marketplace；Hydrogen 需 Shopify 账号（平台抽成为隐性成本） |
+| **9 本地服务** | [calcom/cal.diy](https://github.com/calcom/cal.diy) ★49.7k MIT（见案例库）<br>`easyappointments` ★4.5k ⚠️GPL-3.0 | 预约/排班/改期是本地服务的最小闭环，先跑通再谈获客 |
+| **10 内容 IP** | [obsproject/obs-studio](https://github.com/obsproject/obs-studio) ★79.5k ⚠️GPL-2.0<br>[remotion-dev/remotion](https://github.com/remotion-dev/remotion)（见案例库） | OBS 只做自用工具；Remotion 按实体授权（>3 人公司需商业许可） |
+
+### 7.1 许可风险清单（⚠️ 商用前必须读 LICENSE 原文）
+
+| 仓库 | ★ | 许可 | 结论 |
+| :--- | :--- | :--- | :--- |
+| [outline/outline](https://github.com/outline/outline) | 41.3k | **BSL 1.1** | 源码可见 ≠ 可商用，受 Additional Use Grant 限制 |
+| [docmost/docmost](https://github.com/docmost/docmost) | 22.3k | **AGPL-3.0** | 改后通过网络提供服务即须开源 |
+| [Discourse/discourse](https://github.com/Discourse/discourse) | 48.1k | **GPL-2.0** | 社区标杆，但闭源二开会传染 |
+| [moodle/moodle](https://github.com/moodle/moodle) | 7.6k | **GPL-3.0** | 课程交付系统，同上 |
+| [typesense/typesense](https://github.com/typesense/typesense) | 27.1k | **GPL-3.0** | 搜索，想要 MIT 就换 `meilisearch` 核心 |
+| [obsproject/obs-studio](https://github.com/obsproject/obs-studio) | 79.5k | **GPL-2.0** | 只做自用录制/直播工具 |
+| [alextselegidis/easyappointments](https://github.com/alextselegidis/easyappointments) | 4.5k | **GPL-3.0** | 预约，自用可以，别打包卖 |
+| [getlago/lago](https://github.com/getlago/lago) | 10.8k | **AGPL-3.0** | 计费引擎，闭源商用需商业授权 |
+| [meilisearch/meilisearch](https://github.com/meilisearch/meilisearch) | 59.9k | MIT 核心 + **EE 为 BSL** | 核心可用，`ee/` 目录另许 |
+| [BerriAI/litellm](https://github.com/BerriAI/litellm) | 63.2k | MIT 核心 + **enterprise 目录另许** | 网关核心可用，企业功能需授权 |
+
+**已归档，不可作新基座**：[vercel/commerce](https://github.com/vercel/commerce) ★14.3k MIT（2026-10-19 归档）——只能当 Next.js 电商的代码参照，别在上面盖新楼。
+
+### 7.2 两条反直觉结论
+
+1. **卖模板/组件的最佳底座不是电商系统，是 `shadcn-ui` 的 registry**：用户"复制即拥有"，你卖的是版本与更新，不是许可证锁；
+2. **知识付费最短路径不是自建会员系统，是 Ghost（MIT）**：memberships + 订阅扣款 + 邮件触达已封装，`Discourse` 虽是社区标杆，但 GPL 决定了它进不了闭源产品。
+
+**选底座三条判据**（顺序不能反）：① 许可能否商用 → ② 是否归档、是否近 6 个月有提交 → ③ 架构是否只借一层（别整仓 fork）。任一条不过，换底座，不要"先做起来再说"。
+
+**复核方式**（本批数据抓取于 2026-11-14，Star 与许可会漂移，复用前复跑一次）：
+
+```bash
+curl -s "https://api.github.com/repos/TryGhost/Ghost" | python3 -c "import sys,json;d=json.load(sys.stdin);print(d['stargazers_count'],(d.get('license') or {}).get('spdx_id'),d['archived'],d['pushed_at'][:10])"
+```
+
+---
+
+## 8. 章节索引（要回溯原文时按这个查）
 
 | 主题 | 章节 |
 | :--- | :--- |
