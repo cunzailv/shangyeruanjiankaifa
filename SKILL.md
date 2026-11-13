@@ -34,16 +34,21 @@ description: 商业级全流程项目开发规划专家。作为总控大管家(
 *注意：本 Skill (Project Development Planner) 作为【大管家 / 总控（Orchestrator）】，统控**三大专职独立专家军团（12 核心角色）**：①【商业战略与风控军团】（CFO商业财务、CISO合规审计、PM敏捷规划）；②【产研与 AI 工程军团】（开源架构师、AI工程与Prompt架构师、UI/UX专家、全栈特工、DevOps运维SRE、QA对抗质检）；③【商运增长与数据军团】（营销策划CMO、流量推广Growth、用户运营COO、数据归因BI）。大管家自身负责总控调度、上下文隔离派发与 7 大阶段卡点验收。*
 
 ### 阶段 0：用户需求先行与价值主张验真（CEO & PM 视角）
-- **核心任务**：分析 ICP、JTBD、刚需度定级、制定 Smoke Test 方案。
-- **操作指令**：读取 `assets/stage-0-template.md` 模板，向用户提问或结合用户输入生成报告。
-> **卡点产出**：《用户需求验真与商业价值主张书》（暂停，等待用户确认）。
+- **核心任务**：分析 ICP、JTBD、刚需度定级、制定 Smoke Test 方案；并先判断"这是不是一门真生意"。
+- **操作指令**：
+  1. 读取 `references/monetization-models.md` 第 1 节，从十类变现模型里圈定 1–2 个候选，说明"卖的是什么、回本条件是什么"。
+  2. 验证必须落到动作：**10–20 个精准用户对话**（问最近最头疼的事，不问"你会不会买"）、**假门把手/预售**测付费意愿、**扒竞品差评**找空白。
+  3. 读取 `assets/stage-0-template.md` 模板，向用户提问或结合用户输入生成报告。
+> **卡点产出**：《用户需求验真与商业价值主张书》（含模型候选与付费证据；暂停，等待用户确认）。
 
 ### 阶段 1：商业模式、变现路径与单位经济学测算（CFO / 商业架构视角）
 - **核心任务**：确定 GTM 策略、支付合规、测算 LTV:CAC 与 ROI，规划防破产架构，并给出**可执行的获客预算与止损线**。
 - **操作指令**：
-  1. 必须读取 `references/economics-formulas.md` 获取标准财务计算公式。
-  2. 必须读取 `references/growth-marketing-playbook.md` 第 0~2 节（四层体系 / 营销 / 策划），把「营销定盘 → 策划出弹」落成数字：**目标 CAC / 最低 ROAS / 回本周期 / 主渠道假设**，并与 LTV:CAC 结论互相校验；算法范本（LTV → CAC 上限 → 渠道 CPA 推演 → 投放是否成立）见 `projects/job-match-tool/growth-plan.md`。
-  3. 根据公式进行测算，并按照 `assets/stage-1-template.md` 模板输出报告。
+  1. 必须读取 `references/economics-formulas.md` 获取标准财务计算公式，并额外算清三件事：**Runway（≥6 个月）**、**LTV 用对口径**（订阅型用 `ARPU×毛利/Churn`，任务型用 `ARPPU×毛利×付费月数`）、**保本销量**。
+  2. 必须读取 `references/monetization-models.md` 第 2 节，用同类模型的"启动成本 / 客单 / 毛利 / 回本条件"做量级校验；偏差超过 3 倍必须解释原因，不许直接套用。
+  3. 必须读取 `references/growth-marketing-playbook.md` 第 0~2 节（四层体系 / 营销 / 策划），把「营销定盘 → 策划出弹」落成数字：**目标 CAC / 最低 ROAS / 回本周期 / 主渠道假设**，并与 LTV:CAC 结论互相校验；算法范本（LTV → CAC 上限 → 渠道 CPA 推演 → 投放是否成立）见 `projects/job-match-tool/growth-plan.md`。
+  4. 用 `economics-formulas.md` 第 7 节做一次**虚荣指标自检**：报告里出现 DAU / 注册数 / 曝光量作为主指标，一律退回重写。
+  5. 根据公式进行测算，并按照 `assets/stage-1-template.md` 模板输出报告。
 > **卡点产出**：《单位经济学测算、定价阶梯、GTM 预算与防破产架构报告》（暂停，等待用户确认）。
 
 ### 阶段 2：产品需求文档与原型逻辑 (Product Manager / 交互视角)

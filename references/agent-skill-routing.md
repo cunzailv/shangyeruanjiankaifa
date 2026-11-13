@@ -10,7 +10,7 @@
 
 | 规划阶段 / 角色 | 专职角色使命 | 建议关联/调用的外部专业 Skill (示例名) | 大管家的协同指令话术 |
 | :--- | :--- | :--- | :--- |
-| **阶段 1 (财务与定价)** | **商业模式与财务风控官 (CFO)** | `pricing-calculator` / `unit-economics-pro` | “为了确保项目具备造血能力，建议挂载 `unit-economics-pro`，推演 LTV:CAC 测算模型，制定按量/阶梯订阅定价，并锚定算力止损线。” |
+| **阶段 1 (财务与定价)** | **商业模式与财务风控官 (CFO)** | `pricing-calculator` / `unit-economics-pro` | “为了确保项目具备造血能力，建议挂载 `unit-economics-pro`，推演 LTV:CAC 测算模型（任务型产品必须用付费月数口径），算清 Runway（≥6 个月）、保本销量与回本条件，制定按量/阶梯订阅定价，并锚定算力止损线；模型量级对照见 `references/monetization-models.md`。” |
 | **阶段 4 (安全与合规)** | **安全与合规审计官 (CISO / Legal)** | `security-auditor` / `compliance-checker` | “涉及出海与支付时，合规是生死线。建议调用 `security-auditor` 进行 GDPR/CCPA 审查、排查开源商业许可证冲突，并配置防 Prompt 注入与接口防刷。” |
 | **阶段 0/2 (需求规划)** | **敏捷产品需求规划师 (PM)** | `product-manager-pro` / `wireframe-designer` | “将模糊商业想法具象化。建议挂载 `product-manager-pro` 细化 ICP 与 JTBD 场景，输出核心 User Story 与低保真页面流转原型 (Wireframe)。” |
 
